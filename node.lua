@@ -1,6 +1,6 @@
 -- init
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
-local st = util.screen_transform(90)
+--local st = util.screen_transform(90)
 local loader = require "loader"
 
 -- screensetup parameters 
@@ -133,7 +133,7 @@ node.event("data", decode_parameter_line)  -- listen to UDP
 
 
 function node.render()
-   st()
+--   st()
    
    for name, module in pairs(loader.modules) do
         module.draw()
