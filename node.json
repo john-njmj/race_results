@@ -62,7 +62,7 @@
         "name": "result_font",
         "type": "resource",
         "valid": ["font"],
-        "default": "font.ttf"
+        "default": "ballplay.ttf"
         }
     ]
 }
