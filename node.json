@@ -6,6 +6,19 @@
         "hint": " Text to display in the scroller at the top of the screens",
         "type": "string",
         "default": "Race Results"},
+        {"title": "scroller Mode",
+        "name": "scroller_mode",
+        "hint": "Select hte mode you want the scroller to use",
+        "type": "select",
+        "options": [
+            ["SCROLLER", "Scrolling text"],
+            ["OFF", "Off"],
+            ["INFO" ,"Device information"]
+            ],
+         "default": "SCROLLER"
+        },
+        
+        
         {"title": "Scrolling Text separator",
         "name": "scroller_space",
         "hint": "text to be added as a separator in the scroller, will be added to the end of the scrolling text",
@@ -14,7 +27,15 @@
         {"title": "Scrolling speed",
         "name": "scroller_speed",
         "hint": "Speed as the scrolling text, negatief values for test scrolling to the left , positief values text scrolleing to the right",
+        "ui_width": 6,
         "type": "integer",
-        "default": -10}
+        "default": -10},
+        {"title": "Scrolling size",
+        "name": "scroller_size",
+        "hint": "Fontsize of the scrolling text",
+        "ui_width": 6,
+        "type": "integer",
+        "default": 200}
+        
     ]
 }
