@@ -49,7 +49,20 @@
         "hint": "Fontsize of the scrolling text",
         "ui_width": 6,
         "type": "integer",
-        "default": 200}
-        
+        "default": 200},
+        {"title": "Scroller font",
+        "ui_width": 6,
+        "name": "scroller_font",
+        "type": "resource",
+        "valid": ["font"],
+        "default": "font.ttf"
+        },
+        {"title": "Result font",
+        "ui_width": 6,
+        "name": "result_font",
+        "type": "resource",
+        "valid": ["font"],
+        "default": "font.ttf"
+        },
     ]
 }
