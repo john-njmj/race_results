@@ -8,16 +8,30 @@
         "default": "Race Results"},
         {"title": "scroller Mode",
         "name": "scroller_mode",
-        "hint": "Select hte mode you want the scroller to use",
+        "hint": "Select the mode you want the scroller to use",
+        "ui_width": 6,
         "type": "select",
         "options": [
-            ["SCROLLER", "Scrolling text"],
             ["OFF", "Off"],
+            ["SCROLLER", "Scrolling text"],
             ["INFO" ,"Device information"]
             ],
          "default": "SCROLLER"
         },
-        
+        {"title": "result Mode",
+        "name": "result_mode",
+        "hint": "Select the mode you want the result aera to use",
+        "ui_width": 6,
+        "type": "select",
+        "options": [
+            ["OFF", "Off - blanc Screen"],
+            ["RESULT", "Display results"],
+            ["PIC", "Picture"],
+            ["INFO" ,"Device information"]
+            ],
+         "default": "RESULT"
+        },
+           
         
         {"title": "Scrolling Text separator",
         "name": "scroller_space",
