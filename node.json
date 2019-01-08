@@ -30,24 +30,23 @@
             ["INFO" ,"Device information"]
             ],
          "default": "RESULT"
-        },
-           
-        
+        },       
         {"title": "Scrolling Text separator",
         "name": "scroller_space",
+        "ui_width": 4,
         "hint": "text to be added as a separator in the scroller, will be added to the end of the scrolling text",
         "type": "string",
         "default": " --- "},
         {"title": "Scrolling speed",
         "name": "scroller_speed",
         "hint": "Speed as the scrolling text, negatief values for test scrolling to the left , positief values text scrolleing to the right",
-        "ui_width": 6,
+        "ui_width": 4,
         "type": "integer",
         "default": -10},
         {"title": "Scrolling size",
         "name": "scroller_size",
         "hint": "Fontsize of the scrolling text",
-        "ui_width": 6,
+        "ui_width": 4,
         "type": "integer",
         "default": 200},
         {"title": "Scroller font",
