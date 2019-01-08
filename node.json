@@ -1,4 +1,15 @@
 {
     "name": "Race Results",
-    "options": []
+    "options": [
+        {"title": "Scrolling Text",
+        "name": "scroller_text",
+        "type": "string",
+        "default": "Race Results"
+        }
+        {"title": "Scrolling Text separator",
+        "name": "scroller_space",
+        "type": "string",
+        "default": " --- "
+        }
+        ]
 }
