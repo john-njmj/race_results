@@ -52,8 +52,7 @@
         {"title": "Scroller font",
         "ui_width": 6,
         "name": "scroller_font",
-        "type": "resource",
-        "valid": ["font"],
+        "type": "font",
         "default": "font.ttf"
         },
         {"title": "Result font",
