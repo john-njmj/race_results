@@ -8,7 +8,7 @@
         "default": "Race Results"},
         {"title": "Scrolling Text separator",
         "name": "scroller_space",
-        "hint": "text to be added as a separator in the scroller, will be added to the end of the scrolling text"
+        "hint": "text to be added as a separator in the scroller, will be added to the end of the scrolling text",
         "type": "string",
         "default": " --- "},
         {"title": "Scrolling speed",
