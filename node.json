@@ -15,6 +15,6 @@
         "name": "scroller_speed",
         "hint": "Speed as the scrolling text, negatief values for test scrolling to the left , positief values text scrolleing to the right",
         "type": "integer",
-        "default": "-10"}
+        "default": -10}
     ]
 }
