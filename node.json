@@ -37,19 +37,19 @@
         {"title": "Sroller settings",
         "type": "section"
         },
-        {"title": "Scrolling Text separator",
+        {"title": "Scrolling Separator",
         "name": "scroller_space",
         "ui_width": 3,
         "hint": "text to be added as a separator in the scroller, will be added to the end of the scrolling text",
         "type": "string",
         "default": " --- "},
-        {"title": "Scrolling speed",
+        {"title": "Scrolling Speed",
         "name": "scroller_speed",
         "hint": "Speed as the scrolling text, negatief values for test scrolling to the left , positief values text scrolleing to the right",
         "ui_width": 3,
         "type": "integer",
         "default": -10},
-        {"title": "Scrolling size",
+        {"title": "Scrolling Size",
         "name": "scroller_size",
         "hint": "Fontsize of the scrolling text",
         "ui_width": 3,
@@ -67,7 +67,7 @@
         {"title": "Result size",
         "name": "result_size",
         "hint": "Fontsize of for the results",
-        "ui_width": 3,
+        "ui_width": 6,
         "type": "integer",
         "default": 200},        
         {"title": "Result font",
@@ -76,6 +76,42 @@
         "type": "resource",
         "valid": ["font"],
         "default": "ballplay.ttf"
-        }
+        },
+        {"title": "Results to display",
+        "name": "resultlist",
+        "type": "list",
+        "itemname": "Screen",
+        "items": [{
+            "title": "ID",
+            "ui_width": 2,
+            "name": "screen_id",
+            "type": "device",
+            "valid": ["image", "video"],
+            "default": "empty.png"
+        }, {
+            "title": "results",
+            "ui_width": 10,
+            "name": "result_file_list",
+            "type": "text",
+            "hint": "list the resultfiles (csv) separate by comma",
+            "default": "scholieren_meisjes.csv"
+        }]
+},
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     ]
 }
