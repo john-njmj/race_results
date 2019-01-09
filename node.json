@@ -81,21 +81,32 @@
         "name": "resultlist",
         "type": "list",
         "itemname": "Screen",
-        "items": [{
-            "title": "ID",
-            "ui_width": 2,
-            "name": "screen_id",
-            "type": "device",
-            "valid": ["image", "video"],
-            "default": "empty.png"
-        }, {
-            "title": "results",
-            "ui_width": 10,
-            "name": "result_file_list",
-            "type": "text",
-            "hint": "list the resultfiles (csv) separate by comma",
-            "default": "scholieren_meisjes.csv"
-        }]
+        "items": [{"title": "ID",
+                "ui_width": 4,
+                "name": "screen_id",
+                "type": "device",
+                }, 
+                {"title": "results",
+                "ui_width": 4,
+                "name": "result_file_list",
+                "type": "string",
+                "hint": "list the resultfiles (csv) separate by comma",
+                "default": "scholieren_meisjes.csv"
+                },
+                {"title": "Results Files",
+                "name": "resultfiles",
+                "ui_width": 4, 
+                "type": "list",
+                "itemname": "resultfile",
+                "items": [{"title": "File Name",
+                         "type": "select",
+                         "options": [
+                            ["Menimen_jongens.csv", "Menimen_jongens.csv"],
+                            ["Menimen_meisjes.csv", "Menimen_meisjes.csv"],
+                            ["Pupilen_jongens.csv", "Pupilen_jongens.csv"],
+                            ["Pupilen_meisjes.csv" ,"Pupilen_meisjes.csv"]
+                         ]
+                }]
 }
         
         
