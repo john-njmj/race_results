@@ -82,19 +82,17 @@
         "type": "list",
         "itemname": "Screen",
         "items": [{"title": "ID",
-                "ui_width": 4,
-                "name": "screen_id",
-                "type": "device",
-                }, 
-                {"title": "results",
-                "ui_width": 4,
-                "name": "result_file_list",
-                "type": "string",
-                "hint": "list the resultfiles (csv) separate by comma",
-                "default": "scholieren_meisjes.csv"
-                }
-
-                }]
+                 "ui_width": 4,
+                 "name": "screen_id",
+                 "type": "device",
+                 }, 
+                 {"title": "results",
+                 "ui_width": 4,
+                 "name": "result_file_list",
+                 "type": "string",
+                 "hint": "list the resultfiles (csv) separate by comma",
+                 "default": "scholieren_meisjes.csv"
+                 }]
 }
         
         
