@@ -96,7 +96,7 @@
             "hint": "list the resultfiles (csv) separate by comma",
             "default": "scholieren_meisjes.csv"
         }]
-},
+}
         
         
         
