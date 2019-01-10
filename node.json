@@ -81,16 +81,16 @@
      "type": "list",
      "itemname": "Screen",
      "items": [
-        {"title": "ID",
-        "ui_width": 6,
+        {"title": "Screen",
+        "ui_width": 5,
         "name": "screen_id",
         "type": "device"
         }, 
         {"title": "Results Files",
-        "name": "resultfiles",
-        "ui_width": 6, 
+        "name": "Resultfiles",
+        "ui_width": 5, 
         "type": "list",
-        "itemname": "resultfile",
+        "itemname": "Resultfile",
         "items": [
             {"title": "File Name",
             "name": "filename",
