@@ -66,41 +66,34 @@
      {"title": "Result size",
      "name": "result_size",
      "hint": "Fontsize of for the results",
-     "ui_width": 6,
+     "ui_width": 3,
      "type": "integer",
-     "default": 200},        
+     "default": 40},        
      {"title": "Result font",
-     "ui_width": 6,
+     "ui_width": 3,
      "name": "result_font",
      "type": "resource",
      "valid": ["font"],
-     "default": "ballplay.ttf"
+     "default": "font.ttf"
      },
      {"title": "Results to display",
-     "name": "resultlist",
+     "name": "screenlist",
      "type": "list",
      "itemname": "Screen",
      "items": [
         {"title": "ID",
-        "ui_width": 4,
+        "ui_width": 6,
         "name": "screen_id",
         "type": "device"
         }, 
-        {"title": "results",
-        "ui_width": 4,
-        "name": "result_file_list",
-        "type": "string",
-        "hint": "list the resultfiles (csv) separate by comma",
-        "default": "scholieren_meisjes.csv"
-        },
         {"title": "Results Files",
         "name": "resultfiles",
-        "ui_width": 4, 
+        "ui_width": 6, 
         "type": "list",
         "itemname": "resultfile",
         "items": [
             {"title": "File Name",
-            "name": "file",
+            "name": "filename",
             "type": "select",
             "options":[
                  ["Menimen_jongens.csv", "Menimen_jongens.csv"],
@@ -114,4 +107,3 @@
      }                
     ]
 }
-
