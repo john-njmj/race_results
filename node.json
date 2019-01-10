@@ -84,7 +84,7 @@
         "items": [{"title": "ID",
                  "ui_width": 4,
                  "name": "screen_id",
-                 "type": "device",
+                 "type": "string",
                  }, 
                  {"title": "results",
                  "ui_width": 4,
