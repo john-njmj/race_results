@@ -87,7 +87,7 @@
         "type": "device"
         }, 
         {"title": "Results Files",
-        "name": "Resultfiles",
+        "name": "resultfiles",
         "ui_width": 5, 
         "type": "list",
         "itemname": "Resultfile",
