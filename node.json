@@ -77,8 +77,7 @@
      "default": "font.ttf"
      },
      {"title": "Screen settings",
-     "type": "section",
-     "hint": "Add destails for eache screen in the setup"
+     "type": "section"
      },
      {"title": "Number of screens",
      "hint" : "How many screens you have in the setup", 
@@ -92,13 +91,13 @@
      "itemname": "Screen",
      "items": [
         {"title": "Screen",
-        "ui_width": 5,
+        "ui_width": 3,
         "name": "screen_id",
         "type": "device"
         }, 
         {"title": "Results Files",
         "name": "resultfiles",
-        "ui_width": 5, 
+        "ui_width": 3, 
         "type": "list",
         "itemname": "Resultfile",
         "items": [
