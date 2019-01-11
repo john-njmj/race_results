@@ -78,23 +78,37 @@
      },
      {"title": "Screen settings",
      "type": "section"
-     },
-     {"title": "Number of screens",
-     "hint" : "How many screens you have in the setup", 
-     "name": "scroller_screens",
-     "type" : "integer",
-     "default" : 1
-     },  
+     }, 
      {"title": "Screen details",
      "name": "screenlist",
      "type": "list",
      "itemname": "Screen",
      "items": [
         {"title": "Screen",
-        "ui_width": 3,
+        "ui_width": 6,
         "name": "screen_id",
         "type": "device"
-        }, 
+        },
+        {"title": "Screen Orientation",
+        "hint" : "Set the oritantion running clock wize", 
+        "ui_width": 3,
+        "name": "screen_Width",
+        "type" : "select",
+        "default" : 90
+         "options":[
+                 [0, "0"],
+                 [90, "90"],
+                 [180, "180"],
+                 [270 ,"270"]
+                ],
+        },   
+        {"title": "Screen Width",
+        "hint" : "Width of this screen, screen will allways run in native width, this value is used to strech the scroller correctly over all screens", 
+        "ui_width": 3,
+        "name": "screen_Width",
+        "type" : "integer",
+        "default" : 1080
+        },
         {"title": "Results Files",
         "name": "resultfiles",
         "ui_width": 3, 
