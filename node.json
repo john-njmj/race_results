@@ -92,7 +92,7 @@
         {"title": "Screen Orientation",
         "hint" : "Set the oritantion running clock wize", 
         "ui_width": 3,
-        "name": "screen-oriantation",
+        "name": "screenoriantation",
         "type" : "select",
         "default" : 90,
          "options":[
@@ -105,7 +105,7 @@
         {"title": "Screen Width",
         "hint" : "Width of this screen, screen will allways run in native width, this value is used to strech the scroller correctly over all screens", 
         "ui_width": 3,
-        "name": "screen-Width",
+        "name": "screenwidth",
         "type" : "integer",
         "default" : 1080
         },
