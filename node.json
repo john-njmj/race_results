@@ -81,8 +81,8 @@
      "hint": "Add destails for eache screen in the setup"
      },
      {"title": "Number of screens",
-     "hint" : "How many screens you have in the setup" 
-     "name": "scroller_screens"
+     "hint" : "How many screens you have in the setup", 
+     "name": "scroller_screens",
      "type" : "integer",
      "default" : 1
      },  
