@@ -76,7 +76,17 @@
      "valid": ["font"],
      "default": "font.ttf"
      },
-     {"title": "Results to display",
+     {"title": "Screen settings",
+     "type": "section",
+     "hint": "Add destails for eache screen in the setup"
+     },
+     {"title": "Number of screens",
+     "hint" : "How many screens you have in the setup" 
+     "name": "scroller_screens"
+     "type" : "integer",
+     "default" : 1
+     },  
+     {"title": "Screen details",
      "name": "screenlist",
      "type": "list",
      "itemname": "Screen",
