@@ -2,6 +2,7 @@
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 --local st = util.screen_transform(90)
 local loader = require "loader"
+local json = require "json"
 
 -- Create defaults for all paramters. 
 -- screensetup parameters 
