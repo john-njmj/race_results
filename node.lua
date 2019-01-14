@@ -143,7 +143,7 @@ if CONTENTS['config.json'] then
     util.file_watch("config.json", function(content)
         load_json_file(content)
     end)
-
+end
 -- Open TCP and UDP connection for Live updates
 node.alias "scroller"
 node.event("input", decode_parameter_line) -- listen to TCP
