@@ -138,7 +138,7 @@ if CONTENTS['SCREEN.ini'] then
         load_ini_file(content)
     end)
 end
-If CONTENTS['config.json'] then
+if CONTENTS['config.json'] then
     Print "Found config.json loading the settings"
     util.file_watch("config.json", function(content)
         load_json_file(content)
