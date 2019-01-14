@@ -85,13 +85,13 @@
      "itemname": "Screen",
      "items": [
         {"title": "Screen",
-        "ui_width": 6,
+        "ui_width": 5,
         "name": "screen_id",
         "type": "device"
         },
         {"title": "Screen Orientation",
         "hint" : "Set the oritantion running clock wize", 
-        "ui_width": 3,
+        "ui_width": 4,
         "name": "screenoriantation",
         "type" : "select",
         "default" : 90,
