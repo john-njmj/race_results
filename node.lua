@@ -113,8 +113,8 @@ local function load_json_file (raw)
     update_parameter("scroller_speed", config.scroller_speed) 
     update_parameter("result_mode",  config.result_mode)
     update_parameter("result_size", config.result_size) 
-    update_parameter("scroller_font",config.scroller_font.asset_,name)
-    update_parameter("result_font",config.result_font.asset_,name)
+    update_parameter("scroller_font",config.scroller_font.asset_name)
+    update_parameter("result_font",config.result_font.asset_name)
     -- ADD FONT SELECTIONS here
    
     -- screen specific seetings 
