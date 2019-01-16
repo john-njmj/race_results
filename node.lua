@@ -66,6 +66,10 @@ local function update_parameter(par_name,par_val)
       result_mode = par_val
    elseif par_name == "result_size" then    
       set_result_param(tonumber(par_val))
+   elseif par_name == "scroller_font" then    
+      scroller_font = resource.load_font(par_val)
+   elseif par_name == "result_font" then    
+      result_font = resource.load_font(par_val)     
    else
       print ("unknown PARAMETER :", par_name)
    end
@@ -109,6 +113,8 @@ local function load_json_file (raw)
     update_parameter("scroller_speed", config.scroller_speed) 
     update_parameter("result_mode",  config.result_mode)
     update_parameter("result_size", config.result_size) 
+    update_parameter("scroller_font",config.scroller_font.asset_,name)
+    update_parameter("result_font",config.result_font.asset_,name)
     -- ADD FONT SELECTIONS here
    
     -- screen specific seetings 
