@@ -7,8 +7,10 @@ local json = require "json"
 -- Create defaults for all paramters. 
 -- screensetup parameters 
 screen_number = 1 
+screen_count  = 1 -- only used to display the number of screens on the info screen 
 screen_width = WIDTH -- not in ini
-screen_height = HEIGHT -- only for loca rference not in screen.ini or config.json
+screen_height = HEIGHT -- only for local reference not in screen.ini or config.json
+screen_error = "No error" -- To display config errors in info mode 
 
 -- scroller parameters and defaults  
 scroller_mode = "SCROLLER" -- SCROLLER - INFO
@@ -128,18 +130,27 @@ local function load_json_file (raw)
     -- ADD FONT SELECTIONS here
    
     -- screen specific seetings 
+    update_parameter("screen_count",#config.screenlist)
     local serial = sys.get_env "SERIAL"
-    local my_offset = 0 
+    local my_offset = 0
+    local found_my_screen = 0 
     for idx = 1, #config.screenlist do
        local device = config.screenlist[idx]
        if device.screen_id ~= serial then
-           my_offset = my_offset + device.screenwidth
+         if found_my_screen == 0 then   
+            my_offset = my_offset + device.screenwidth
+         end 
        else
-           -- found the settings for this screen 
-           update_parameter("screen_width",device.screenwidth)
-           -- LOAD Orientation
-           -- LOAD RESULT List
-           -- EXT the FOR loop
+           If found_my_screen == 0 then 
+               -- found the settings for this screen
+              update_parameter("screen_number",idx)
+              update_parameter("screen_oriantation",device.screenoriantation)
+              update_parameter("screen_width",device.screenwidth)
+              -- LOAD RESULT List
+              found_my_screen = 1
+           else
+              screen_error = "Screen Defined more than once"
+           end
        end
     end
     update_parameter("scroller_offset",my_offset)
