@@ -84,7 +84,7 @@ local function update_parameter(par_name,par_val)
    elseif par_name == "screen_width" then
          screen_width = tonumber(par_val)
    elseif par_name == "screen_count" then
-         screen_count : tonumber(par_val)
+         screen_count = tonumber(par_val)
    elseif par_name == "screen_oriantation" then 
          screen_oriantation = tonumber(par_val)
    else
