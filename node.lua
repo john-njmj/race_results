@@ -133,13 +133,13 @@ scroller_update(scroller_text, scroller_space,scroller_size)
 
 -- load paramteres from SCREEN.ini and/or config.json file , add watch the files to reload on changes
 if CONTENTS['SCREEN.ini'] then
-    Print "Found SCREEN.ini loading the settings"
+    print "Found SCREEN.ini loading the settings"
     util.file_watch("SCREEN.ini", function(content)
         load_ini_file(content)
     end)
 end
 if CONTENTS['config.json'] then
-    Print "Found config.json loading the settings"
+    print "Found config.json loading the settings"
     util.file_watch("config.json", function(content)
         load_json_file(content)
     end)
