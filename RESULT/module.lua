@@ -130,7 +130,7 @@ function M.draw()
          result_font:write(0,400,"Device Screen width :" .. WIDTH .. " screen width config : " .. screen_width,45,1,0,0,1)
       end 
       result_font:write(0,450,"Screen config info : " .. screen_error,45,1,1,1,1) 
-      result_font:write(0,screen_height - 800,"Screen Number / Screen Count,45,1,1,1,1)      
+      result_font:write(0,screen_height - 800,"Screen Number / Screen Count",45,1,1,1,1)      
       result_font:write(0,screen_height - 750,screen_number .. "/" .. screen_count,750,1,1,1,1)      
    elseif result_mode == "PIC" then
       gl.translate(540,0,540)
