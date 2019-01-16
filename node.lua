@@ -10,6 +10,7 @@ screen_number = 1
 screen_count  = 1 -- only used to display the number of screens on the info screen 
 screen_width = WIDTH -- not in ini
 screen_height = HEIGHT -- only for local reference not in screen.ini or config.json
+screen_oriantation = 0 
 screen_error = "No error" -- To display config errors in info mode 
 
 -- scroller parameters and defaults  
@@ -82,6 +83,10 @@ local function update_parameter(par_name,par_val)
       end 
    elseif par_name == "screen_width" then
          screen_width = tonumber(par_val)
+   elseif par_name == "screen_count" then
+         screen_count : tonumber(par_val)
+   elseif par_name == "screen_oriantation" then 
+         screen_oriantation = tonumber(par_val)
    else
       print ("unknown PARAMETER :", par_name)
    end
@@ -153,7 +158,10 @@ local function load_json_file (raw)
            end
        end
     end
-    update_parameter("scroller_offset",my_offset)
+   if found_my_screen == 0 then
+      screen_error = "This screen is not defined in the setup"
+   end      
+   update_parameter("scroller_offset",my_offset)
     
 end
 --local function decode_command(line)
