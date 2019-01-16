@@ -103,7 +103,14 @@ local function load_json_file (raw)
 -- when on info-beamer hosted settings are in config.json 
     local config = json.decode(raw)
     update_parameter("scroller_text",config.scroller_text)
-    -- ADD HERE ALL OTHER GENERAL PARAMETERS
+    update_parameter("scroller_space",config.scroller_space)
+    update_parameter("scroller_mode", config.scroller_mode)
+    update_parameter("scroller_size", config.scroller_size)
+    update_parameter("scroller_speed", config.scroller_speed) 
+    update_parameter("result_mode",  config.result_mode)
+    update_parameter("result_size", config.result_size) 
+    -- ADD FONT SELECTIONS here
+   
     -- screen specific seetings 
     local serial = sys.get_env "SERIAL"
     local my_offset = 0 
