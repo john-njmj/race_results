@@ -5,8 +5,8 @@ print("RESULTS sub module INIT")
 local M = {}
 local results = {}
 local V_pos = scroller_size + 10
-local pic1 = resource.load_image(localized("foto1.jpg"))
-local pic2 = resource.load_image(localized("foto2.jpg"))
+--local pic1 = resource.load_image(localized("foto1.jpg"))
+--local pic2 = resource.load_image(localized("foto2.jpg"))
 local rotate = 0 
 
 function init_results ()
@@ -121,6 +121,7 @@ function M.draw()
          end
       end 
    elseif result_mode == "INFO" then
+      result_font:write(0,300,"INFO",100,1,1,1,1)
       result_font:write(0,screen_height - 900,screen_number,900,1,1,1,1)      
    elseif result_mode == "PIC" then
       gl.translate(540,0,540)
