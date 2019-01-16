@@ -66,10 +66,18 @@ local function update_parameter(par_name,par_val)
       result_mode = par_val
    elseif par_name == "result_size" then    
       set_result_param(tonumber(par_val))
-   elseif par_name == "scroller_font" then    
-      scroller_font = resource.load_font(par_val)
+   elseif par_name == "scroller_font" then
+      if CONTENTS[par_val] then
+         scroller_font = resource.load_font(par_val)
+      else 
+         print ("Scroller_font not found : ",par_val)
+      end 
    elseif par_name == "result_font" then    
-      result_font = resource.load_font(par_val)     
+      if CONTENTS[par_val] then
+         result_font = resource.load_font(par_val)
+      else 
+         print ("result_font not found : ",par_val)
+      end 
    else
       print ("unknown PARAMETER :", par_name)
    end
