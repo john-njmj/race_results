@@ -141,7 +141,7 @@ local function load_json_file (raw)
             my_offset = my_offset + device.screenwidth
          end 
        else
-           If found_my_screen == 0 then 
+           if found_my_screen == 0 then 
                -- found the settings for this screen
               update_parameter("screen_number",idx)
               update_parameter("screen_oriantation",device.screenoriantation)
