@@ -121,7 +121,9 @@ function M.draw()
          end
       end 
    elseif result_mode == "INFO" then
-      result_font:write(0,300,"INFO",100,1,1,1,1)
+      result_font:write(0,300,"INFO",50,1,1,1,1)
+      local serial = sys.get_env "SERIAL"
+      result_font:write(0,360,"Device Serial Nr :" serial ,50,1,1,1,1)
       result_font:write(0,screen_height - 900,screen_number,900,1,1,1,1)      
    elseif result_mode == "PIC" then
       gl.translate(540,0,540)
