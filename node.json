@@ -1,5 +1,5 @@
 {"name": "Race Results",
- "permissions": {"network": "Needs to recive the csv files"}
+ "permissions": {"network": "Needs to recive the csv files"},
  "options":[
     {"title": "Genral settings",
     "type": "section"
