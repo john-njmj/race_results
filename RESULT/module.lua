@@ -131,8 +131,10 @@ function M.draw()
       end 
       result_font:write(0,450,"Screen config info : " .. screen_error,45,1,1,1,1) 
       result_font:write(0,500,"This screen will display :" ,45,1,1,1,1)
+      local pos = 550
       for i,result_file in ipairs(result_files) do
-         result_font:write(0,500+(i*50),result_file,45,1,1,1,1)
+         result_font:write(0,pos,i .. " - " .. result_file,45,1,1,1,1)
+         pos= pos + 50
       end
       result_font:write(0,screen_height - 800,"Screen Number / Screen Count",45,1,1,1,1)      
       result_font:write(0,screen_height - 750,screen_number .. "/" .. screen_count,750,1,1,1,1)      
