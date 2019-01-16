@@ -124,7 +124,11 @@ function M.draw()
       result_font:write(0,300,"configuration INFO",45,1,1,1,1)
       local serial = sys.get_env "SERIAL"
       result_font:write(0,350,"Device Serial Nr :" .. serial ,45,1,1,1,1)
-      result_font:write(0,400,"Curent Screen width :" .. screen_width .. "screen width config : " .. screen_width_conf,45,1,1,1,1)
+      if  WIDTH == screen_width then 
+         result_font:write(0,400,"Curent Screen width :" .. WIDTH .. "screen width config : " .. screen_width,45,0,1,1,1)
+      else 
+         result_font:write(0,400,"Curent Screen width :" .. WIDTH .. "screen width config : " .. screen_width,45,1,0,1,1)
+      end 
       result_font:write(0,screen_height - 900,screen_number,900,1,1,1,1)      
    elseif result_mode == "PIC" then
       gl.translate(540,0,540)
