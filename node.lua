@@ -17,7 +17,7 @@ scroller_size = 200
 scroller_speed = -10 
 scroller_space = " +++ " 
 scroller_text = "STE Results" 
-scroller_width = WIDTH -- TO BE REMOVED NOT USED 
+scroller_width = WIDTH -- Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
 scroller_offset = 0 -- sum of screen width of screens before this screen
 scroller_font = resource.load_font("font.ttf") -- not in screen.ini
 
@@ -78,6 +78,8 @@ local function update_parameter(par_name,par_val)
       else 
          print ("result_font not found : ",par_val)
       end 
+   elseif par_name == "screen_width" then
+         screen_width = tonumber(par_val)
    else
       print ("unknown PARAMETER :", par_name)
    end
