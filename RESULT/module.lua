@@ -123,15 +123,14 @@ function M.draw()
    elseif result_mode == "INFO" then
       result_font:write(0,300,"configuration INFO",45,1,1,1,1)
       local serial = sys.get_env "SERIAL"
-      result_font:write(0,350,"Device Serial Nr :" .. serial ,45,1,1,1,1)
+      result_font:write(0,350,"Device Serial Nr :" .. serial,45,1,1,1,1)
       if  WIDTH == screen_width then 
          result_font:write(0,400,"Device Screen width :" .. WIDTH .. " screen width config : " .. screen_width,45,0,0,1,1)
       else 
-         result_font:write(0,400,"Device Screen width :" .. WIDTH .. " screen width config : " .. screen_width,45,1,0,0,1)
+         result_font:write(0,400,"Device Screen width :" .. WIDTH .. " screen width config : " .. screen_width,45,0,1,0,1)
       end 
-      result_font:write(0,450,"Screen number :" .. screen_number .. " totaal screens : " .. screen_count,45,1,0,0,1)
       result_font:write(0,500,"Screen config info : " .. screen_error,45,1,0,0,1) 
-      result_font:write(0,screen_height - 900,screen_number,900,1,1,1,1)      
+      result_font:write(0,screen_height - 900,screen_number .. "/" .. screen_count,900,1,1,1,1)      
    elseif result_mode == "PIC" then
       gl.translate(540,0,540)
       gl.rotate(rotate, 0, 540,0)
