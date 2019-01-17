@@ -124,12 +124,12 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
         G=1
         B=1
    end
-   if info_size = "max" then 
+   if info_size == "max" then 
       info_size = screen_height - info_v_pos
    end
    -- reduce size if text is to long for screen
    while result_font:width(info_text,info_size) >screen_width do 
-       info_size= info_size * 0.95
+       info_size = info_size * 0.95
    end 
    result_font:write(0,info_v_pos,info_text,info_size,R,G,B,1)
    info_v_pos = info_v_pos + info_size + 5 -- set vertical position for next line and retrun it
