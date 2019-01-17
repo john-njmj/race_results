@@ -130,24 +130,17 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
         B=1
    end
    if info_size == "max" then 
-      -- font:width only works with size 400 max, use 100 as ref size to start  
-      my_size = 100
+      if screen_height - info_v_pos < 400 then
+         my_size = screen_height - info_v_pos
+      else
+         my_size = 400
+      end 
    else 
       my_size = info_size
    end    
-   -- size_multiplier = value to use to let test use compleet screen width
-   ref_width = result_font:width(info_text,my_size)
-   size_mult = screen-width / ref_width
-   if info_size == "max" then
-      --set size to fill screen width
-      my_size = my_size * size_mult
-      -- limit to screen width
-      if my_size > screen_height - info_v_pos then
-         my_size = screen_height - info_v_pos
-      end 
-   elseif ref_width > screen_width then -- size walue was set 
-       my_size = my_size * size_mult 
-   end 
+   while result_font:width(info_text,my_size) > screen_width do
+                  my_size = my_size * 0.95
+   end
    result_font:write(0,info_v_pos,info_text,my_size,R,G,B,1)
    info_v_pos = info_v_pos + my_size + 5 -- set vertical position for next line and retrun it
    return info_v_pos 
