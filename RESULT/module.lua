@@ -114,6 +114,8 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
    local R
    local G
    local B
+   local my_size 
+   local ref_width
    if info_collor == "red" then
         R=1
         G=0
@@ -128,17 +130,26 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
         B=1
    end
    if info_size == "max" then 
-      info_size = screen_height - info_v_pos
-      if info_size > 400 then 
-         info_size = 400
-      end
-   end
-   -- reduce size if text is to long for screen
-   while result_font:width(info_text,info_size) >screen_width do 
-       info_size = info_size * 0.95
+      -- font:width only works with size 400 max, use 100 as ref size to start  
+      my_size = 100
+   else 
+      my_size = info_size
+   end    
+   -- size_multiplier = value to use to let test use compleet screen width
+   ref_width = result_font:width(info_text,my_size)
+   size_mult = screen-width / ref_width
+   if info_size == "max" then
+      --set size to fill screen width
+      my_size = my_size * size_mult
+      -- limit to screen width
+      if my_size > screen_height - info_v_pos then
+         my_size = screen_height - info_v_pos
+      end 
+   elseif ref_width > screen_width -- size walue was set 
+       my_size = my_size * size_mult 
    end 
-   result_font:write(0,info_v_pos,info_text,info_size,R,G,B,1)
-   info_v_pos = info_v_pos + info_size + 5 -- set vertical position for next line and retrun it
+   result_font:write(0,info_v_pos,info_text,my_size,R,G,B,1)
+   info_v_pos = info_v_pos + my_size + 5 -- set vertical position for next line and retrun it
    return info_v_pos 
 end
 
@@ -167,7 +178,7 @@ function M.draw()
       IV_pos = draw_info_line("Screen config info : " .. screen_error,IV_pos,45,"white")
       IV_pos = draw_info_line("This screen will display :" ,IV_pos,45,"white")
       for i,result_file in ipairs(result_files) do
-         IV_pos = draw_info_line(i .. " - " .. result_file,IV_pos,45,"white")
+         IV_pos = draw_info_line("        " .. i .. " - " .. result_file,IV_pos,45,"white")
       end
       IV_pos = draw_info_line("Screen Number / Screen Count",IV_pos,45,"white")
       IV_pos = draw_info_line(screen_number .. "/" .. screen_count,IV_pos,"max","white")
