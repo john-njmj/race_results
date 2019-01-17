@@ -130,7 +130,8 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
    end
    info_text = R .. G .. B .. info_text
    if info_size == "max" then 
-      info_size = tonumber(screen_height) - tonumber(info_v_pos)
+      --info_size = tonumber(screen_height) - tonumber(info_v_pos)
+      info_size = 100
    end
    -- reduce size if text is to long for screen
    while result_font:width(info_text,info_size) >screen_width do 
