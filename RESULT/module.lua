@@ -1,6 +1,5 @@
 -- RESULTS
 local localized, CHILDS, CONTENTS = ...
-local V_pos
 
 print("RESULTS sub module INIT")
 local M = {}
@@ -59,7 +58,7 @@ end
 
 function draw_result(lines)
  
-   H_pos = {}
+   local H_pos = {}
    --start from left until you get to name
    H_pos[1] = 0 --Postion most left on the screen 
    H_pos[2] = H_pos[1] + result_ref_width2 + result_ref_width_sep -- race number 
