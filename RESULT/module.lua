@@ -140,7 +140,7 @@ function M.draw()
       pos = pos + 50 
       my_text = screen_number .. "/" .. screen_count
       my_size = screen_height - pos
-      while result_font:width(my_text,my_size) >screen_width 
+      while result_font:width(my_text,my_size) >screen_width do 
          my_size= my_size - 25
       end 
       result_font:write(0,pos,my_text,my_size,1,1,1,1)      
