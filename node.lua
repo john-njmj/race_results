@@ -9,8 +9,8 @@ local json = require "json"
 screen_number = 1 
 screen_count  = 1 -- only used to display the number of screens on the info screen 
 screen_width_config = NATIVE_WIDTH -- not in ini  - config.json : Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
-screen_width = 0 -- place holder , set in node.render  - only for local reference not in screen.ini or config.json  
-screen_height = 0 -- place holder , set in node.render - only for local reference not in screen.ini or config.json
+screen_width = NATIVE_WIDTH -- place holder , set in node.render  - only for local reference not in screen.ini or config.json  
+screen_height = NATIVE_HEIGHT -- place holder , set in node.render - only for local reference not in screen.ini or config.json
 screen_oriantation = 0 
 screen_error = "No error" -- To display config errors in info mode 
 
@@ -38,10 +38,10 @@ local function set_screen_rotation(my_rotation)
    -- recoalculate width and height
    if my_rotation == 0 or my_rotation == 270 then 
       screen_width = NATIVE_WIDTH 
-      screen_height = NATIIVE_HEIGHT 
+      screen_height = NATIVE_HEIGHT 
    else -- portrate swap height and width
       screen_height = NATIVE_WIDTH 
-      screen_width = NATIIVE_HEIGHT 
+      screen_width = NATIVE_HEIGHT 
    end      
 end 
 
@@ -184,6 +184,7 @@ end
 
 -- ### INIT #### START OF THE MAIN PROGRAM
 -- run delfault calculations 
+set_screen_rotation(screen_oriantation)
 set_result_param(result_size)
 scroller_update(scroller_text, scroller_space,scroller_size)
 
