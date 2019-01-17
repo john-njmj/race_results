@@ -1,5 +1,6 @@
 -- RESULTS
 local localized, CHILDS, CONTENTS = ...
+local V_pos
 
 print("RESULTS sub module INIT")
 local M = {}
