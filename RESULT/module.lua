@@ -111,6 +111,7 @@ function draw_result(lines)
 end 
 
 function draw_info_line(info_text,info_v_pos,info_size,info_collor)
+   info_text = info_size .. info_collor ..info_text
    if info_collor == "red" then
         R=1
         G=0
