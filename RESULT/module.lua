@@ -153,6 +153,7 @@ function M.draw()
          end
       end 
    elseif result_mode == "INFO" then
+      local error_collor
       --draw_info_line(text,pos,size,collor)
       IV_pos = draw_info_line("System and configuration INFORMATION",scroller_size + 10,45,"white")   
       IV_pos = draw_info_line("Device Serial Nr :" .. sys.get_env "SERIAL",IV_pos,45,"white")   
