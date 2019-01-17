@@ -145,7 +145,7 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
       if my_size > screen_height - info_v_pos then
          my_size = screen_height - info_v_pos
       end 
-   elseif ref_width > screen_width -- size walue was set 
+   elseif ref_width > screen_width then -- size walue was set 
        my_size = my_size * size_mult 
    end 
    result_font:write(0,info_v_pos,info_text,my_size,R,G,B,1)
