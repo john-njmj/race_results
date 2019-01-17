@@ -1,7 +1,7 @@
 -- init
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 local screen_rotation_function 
-local st = util.screen_transform(90)
+-- local st = util.screen_transform(90)
 local loader = require "loader"
 local json = require "json"
 
