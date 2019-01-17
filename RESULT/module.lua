@@ -128,10 +128,9 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
         G=1
         B=1
    end
-   info_text = R .. G .. B .. info_text
    if info_size == "max" then 
-      --info_size = tonumber(screen_height) - tonumber(info_v_pos)
-      info_size = 100
+      info_size = screen_height - info_v_pos
+      --info_size = 100
    end
    -- reduce size if text is to long for screen
    while result_font:width(info_text,info_size) >screen_width do 
@@ -161,9 +160,9 @@ function M.draw()
       if  screen_width_config == screen_width then 
          error_collor = "green"
       else 
-         error_coller = "red"
+         error_collor = "red"
       end 
-      -- IV_pos = draw_info_line("Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,IV_pos,45,error_collor)
+      IV_pos = draw_info_line("Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,IV_pos,45,error_collor)
       IV_pos = draw_info_line("Screen config info : " .. screen_error,IV_pos,45,"white")
       IV_pos = draw_info_line("This screen will display :" ,IV_pos,45,"white")
       for i,result_file in ipairs(result_files) do
