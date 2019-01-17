@@ -9,8 +9,8 @@ local json = require "json"
 screen_number = 1 
 screen_count  = 1 -- only used to display the number of screens on the info screen 
 screen_width_config = WIDTH -- not in ini  - config.json : Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
-screen_width = WIDTH -- only for local reference not in screen.ini or config.json  
-screen_height = HEIGHT -- only for local reference not in screen.ini or config.json
+screen_width = 0 -- place holder , set in node.render  - only for local reference not in screen.ini or config.json  
+screen_height = 0 -- place holder , set in node.render - only for local reference not in screen.ini or config.json
 screen_oriantation = 0 
 screen_error = "No error" -- To display config errors in info mode 
 
@@ -203,8 +203,10 @@ node.event("data", decode_parameter_line)  -- listen to UDP
 
 
 function node.render()
-   --st()
    screen_rotation_function()
+   screen_width = WIDTH 
+   screen_height = HEIGHT
+   
    for name, module in pairs(loader.modules) do
         module.draw()
    end
