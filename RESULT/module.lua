@@ -111,6 +111,9 @@ function draw_result(lines)
 end 
 
 function draw_info_line(info_text,info_v_pos,info_size,info_collor)
+   local R
+   local G
+   local B
    info_text = info_size .. info_collor ..info_text
    if info_collor == "red" then
         R=1
@@ -125,8 +128,9 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
         G=1
         B=1
    end
+   info_text = R .. G .. B .. info_text
    if info_size == "max" then 
-      info_size = screen_height - info_v_pos
+      info_size = tonumber(screen_height) - tonumber(info_v_pos)
    end
    -- reduce size if text is to long for screen
    while result_font:width(info_text,info_size) >screen_width do 
