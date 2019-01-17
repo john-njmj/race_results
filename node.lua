@@ -1,7 +1,6 @@
 -- init
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
-local screen_rotation_function 
--- local st = util.screen_transform(90)
+local screen_rotation_function -- place holder for rotation function
 local loader = require "loader"
 local json = require "json"
 
@@ -9,7 +8,8 @@ local json = require "json"
 -- screensetup parameters 
 screen_number = 1 
 screen_count  = 1 -- only used to display the number of screens on the info screen 
-screen_width = WIDTH -- not in ini
+screen_width_config = WIDTH -- not in ini  - config.json : Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
+screen_width = WIDTH -- only for local reference not in screen.ini or config.json  
 screen_height = HEIGHT -- only for local reference not in screen.ini or config.json
 screen_oriantation = 0 
 screen_error = "No error" -- To display config errors in info mode 
@@ -21,7 +21,7 @@ scroller_size = 200
 scroller_speed = -10 
 scroller_space = " +++ " 
 scroller_text = "STE Results" 
-scroller_width = WIDTH -- Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
+-- remove scroller_width = WIDTH -- Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
 scroller_offset = 0 -- sum of screen width of screens before this screen
 scroller_font = resource.load_font("font.ttf") -- not in screen.ini
 
@@ -35,6 +35,9 @@ result_font = resource.load_font("font.ttf") -- not in ini
 local function set_screen_rotation(my_rotation)
    screen_oriantation = my_rotation
    screen_rotation_function = util.screen_transform(my_rotation)
+   -- recoalculate width and height
+   screen_width = WIDTH 
+   screen_height = HEIGHT 
 end 
 
 local function set_result_param(my_size)
@@ -87,8 +90,8 @@ local function update_parameter(par_name,par_val)
       else 
          print ("result_font not found : ",par_val)
       end 
-   elseif par_name == "screen_width" then
-         screen_width = tonumber(par_val)
+   elseif par_name == "screen_width_config" then
+         screen_width_config = tonumber(par_val)
    elseif par_name == "screen_count" then
          screen_count = tonumber(par_val)
    elseif par_name == "screen_oriantation" then 
@@ -156,7 +159,7 @@ local function load_json_file (raw)
                -- found the settings for this screen
               update_parameter("screen_number",idx)
               update_parameter("screen_oriantation",device.screenoriantation)
-              update_parameter("screen_width",device.screenwidth)
+              update_parameter("screen_width_config",device.screenwidth)
               -- LOAD RESULT List
               found_my_screen = 1
            else
