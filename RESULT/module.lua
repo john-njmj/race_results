@@ -114,7 +114,6 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
    local R
    local G
    local B
-   info_text = info_size .. info_collor ..info_text
    if info_collor == "red" then
         R=1
         G=0
@@ -130,7 +129,9 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
    end
    if info_size == "max" then 
       info_size = screen_height - info_v_pos
-      --info_size = 100
+      if info_size > 400 then 
+         info_size = 400
+      end
    end
    -- reduce size if text is to long for screen
    while result_font:width(info_text,info_size) >screen_width do 
