@@ -1,0 +1,3 @@
+{"name": "Race Results window",
+"permissions": {"network": "Needs to recive the csv files"}
+}
