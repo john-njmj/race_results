@@ -176,7 +176,7 @@ function M.draw()
       --   pos= pos + 50
       end
       IV_pos = draw_info_line("Screen Number / Screen Count",IV_pos,45,"white")
-      IV_pos = draw_info_line(screen_number .. "/" .. screen_count,IV_pos,"max","white")
+      IV_pos = draw_info_line(screen_number .. "/" .. screen_count,IV_pos,100,"white")
       --result_font:write(0,pos,"Screen Number / Screen Count",45,1,1,1,1)
       --pos = pos + 50 
       --my_text = screen_number .. "/" .. screen_count
