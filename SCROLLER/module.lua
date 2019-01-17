@@ -35,7 +35,7 @@ function draw_scroller()
 	repeat
 		scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, 1,1,0,1)
       draw_pos = draw_pos + scroller_text_len + scroller_space_len
-	until draw_pos > scroller_offset + WIDTH
+	until draw_pos > scroller_offset + screen_width
  
  -- move scroller_pos for next frame
    scroller_pos = scroller_pos + scroller_speed
