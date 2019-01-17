@@ -163,7 +163,7 @@ function M.draw()
       else 
          error_coller = "red"
       end 
-      IV_pos = draw_info_line("Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,IV_pos,45,error_collor)
+      -- IV_pos = draw_info_line("Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,IV_pos,45,error_collor)
       IV_pos = draw_info_line("Screen config info : " .. screen_error,IV_pos,45,"white")
       IV_pos = draw_info_line("This screen will display :" ,IV_pos,45,"white")
       for i,result_file in ipairs(result_files) do
