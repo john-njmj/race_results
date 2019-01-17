@@ -8,7 +8,7 @@ local json = require "json"
 -- screensetup parameters 
 screen_number = 1 
 screen_count  = 1 -- only used to display the number of screens on the info screen 
-screen_width_config = WIDTH -- not in ini  - config.json : Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
+screen_width_config = NATIVE_WIDTH -- not in ini  - config.json : Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
 screen_width = 0 -- place holder , set in node.render  - only for local reference not in screen.ini or config.json  
 screen_height = 0 -- place holder , set in node.render - only for local reference not in screen.ini or config.json
 screen_oriantation = 0 
@@ -36,8 +36,13 @@ local function set_screen_rotation(my_rotation)
    screen_oriantation = my_rotation
    screen_rotation_function = util.screen_transform(my_rotation)
    -- recoalculate width and height
-   screen_width = WIDTH 
-   screen_height = HEIGHT 
+   if my_rotation == 0 or my_rotation == 270 then 
+      screen_width = NATIVE_WIDTH 
+      screen_height = NATIIVE_HEIGHT 
+   else -- portrate swap height and width
+      screen_height = NATIVE_WIDTH 
+      screen_width = NATIIVE_HEIGHT 
+   end      
 end 
 
 local function set_result_param(my_size)
@@ -203,10 +208,7 @@ node.event("data", decode_parameter_line)  -- listen to UDP
 
 
 function node.render()
-   screen_rotation_function()
-   screen_width = WIDTH 
-   screen_height = HEIGHT
-   
+   screen_rotation_function()   
    for name, module in pairs(loader.modules) do
         module.draw()
    end
