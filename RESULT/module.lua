@@ -148,10 +148,10 @@ function M.draw()
       end 
    elseif result_mode == "INFO" then
       --draw_info_line(info_text,info_v_pos,info_size,info_collor)
-      V_pos = scroller_size + 10
-      V_pos = draw_info_line("System and configuration INFORMATION",V_pos,45,"white")   
+      IV_pos = scroller_size + 10
+      IV_pos = draw_info_line("System and configuration INFORMATION",IV_pos,45,"white")   
       -- result_font:write(0,300,"System and configuration INFORMATION",45,1,1,1,1)
-      V_pos = draw_info_line(sys.get_env "SERIAL",V_pos,45,"white")   
+      IV_pos = draw_info_line(sys.get_env "SERIAL",IV_pos,45,"white")   
       --local serial = sys.get_env "SERIAL"
       --result_font:write(0,350,"Device Serial Nr :" .. serial,45,1,1,1,1)
       if  screen_width_config == screen_width then 
@@ -159,24 +159,24 @@ function M.draw()
       else 
         error_coller = "red"
       end 
-      V_pos = draw_info_line("Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,45,error_collor)
+      IV_pos = draw_info_line("Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,IV_pos,45,error_collor)
       --if  screen_width_config == screen_width then 
       --   result_font:write(0,400,"Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,45,0,1,0,1)
       --else 
       --   result_font:write(0,400,"Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,45,1,0,0,1)
       --end 
-      V_pos = draw_info_line("Screen config info : " .. screen_error,V_pos,45,"white")
+      IV_pos = draw_info_line("Screen config info : " .. screen_error,IV_pos,45,"white")
       --result_font:write(0,450,"Screen config info : " .. screen_error,45,1,1,1,1) 
-      V_pos = draw_info_line("This screen will display :" ,V_pos,45,"white")
+      IV_pos = draw_info_line("This screen will display :" ,IV_pos,45,"white")
       --result_font:write(0,500,"This screen will display :" ,45,1,1,1,1)
       --local pos = 550
       for i,result_file in ipairs(result_files) do
-         V_pos = draw_info_line(i .. " - " .. result_file,V_pos,45,"white")
+         IV_pos = draw_info_line(i .. " - " .. result_file,IV_pos,45,"white")
       --   result_font:write(0,pos,i .. " - " .. result_file,45,1,1,1,1)
       --   pos= pos + 50
       end
-      V_pos = draw_info_line("Screen Number / Screen Count",V_pos,45,"white")
-      V_pos = draw_info_line(screen_number .. "/" .. screen_count,V_pos,"max","white")
+      IV_pos = draw_info_line("Screen Number / Screen Count",IV_pos,45,"white")
+      IV_pos = draw_info_line(screen_number .. "/" .. screen_count,IV_pos,"max","white")
       --result_font:write(0,pos,"Screen Number / Screen Count",45,1,1,1,1)
       --pos = pos + 50 
       --my_text = screen_number .. "/" .. screen_count
