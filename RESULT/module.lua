@@ -115,7 +115,7 @@ function draw_info_line(info_text,info_v_pos,info_size,info_collor)
         R=1
         G=0
         B=0
-   elseif info_collor == "green then
+   elseif info_collor == "green" then
         R=0
         G=1
         B=0
