@@ -1,5 +1,6 @@
 -- init
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
+local screen_rotation_function 
 local st = util.screen_transform(90)
 local loader = require "loader"
 local json = require "json"
@@ -31,6 +32,11 @@ result_files={"results_sm.csv", "results_sj.csv"}
 result_font = resource.load_font("font.ttf") -- not in ini
 
 -- funtions 
+local function set_screen_rotation(my_rotation)
+   screen_oriantation = my_rotation
+   screen_rotation_function = util.screen_transform(my_rotation)
+end 
+
 local function set_result_param(my_size)
    result_size = my_size
    result_ref_width_sep = result_size 
@@ -86,7 +92,7 @@ local function update_parameter(par_name,par_val)
    elseif par_name == "screen_count" then
          screen_count = tonumber(par_val)
    elseif par_name == "screen_oriantation" then 
-         screen_oriantation = tonumber(par_val)
+       set_screen_rotation(par_val)
    else
       print ("unknown PARAMETER :", par_name)
    end
@@ -194,8 +200,8 @@ node.event("data", decode_parameter_line)  -- listen to UDP
 
 
 function node.render()
-   st()
-   
+   --st()
+   screen_rotation_function()
    for name, module in pairs(loader.modules) do
         module.draw()
    end
