@@ -110,6 +110,32 @@ function draw_result(lines)
    V_pos= V_pos + result_size + 5 -- create separation between results
 end 
 
+function draw_info_line(info_text,info_v_pos,info_size,info_collor)
+   if info_collor == "red" then
+        R=1
+        G=0
+        B=0
+   elseif info_collor == "green then
+        R=0
+        G=1
+        B=0
+   else
+        R=1
+        G=1
+        B=1
+   end
+   if info_size = "max" then 
+      info_size = screen_height - info_v_pos
+   end
+   -- reduce size if text is to long for screen
+   while result_font:width(info_text,info_size) >screen_width do 
+       info_size= info_size * 0.95
+   end 
+   result_font:write(0,info_v_pos,info_text,info_size,R,G,B,1)
+   info_v_pos = info_v_pos + info_size + 5 -- set vertical position for next line and retrun it
+   return info_v_pos 
+end
+
 
 function M.draw()
 
@@ -121,29 +147,44 @@ function M.draw()
          end
       end 
    elseif result_mode == "INFO" then
-      result_font:write(0,300,"System and configuration INFORMATION",45,1,1,1,1)
-      local serial = sys.get_env "SERIAL"
-      result_font:write(0,350,"Device Serial Nr :" .. serial,45,1,1,1,1)
+      --draw_info_line(info_text,info_v_pos,info_size,info_collor)
+      V_pos = scroller_size + 10
+      V_pos = draw_info_line("System and configuration INFORMATION",V_pos,45,"white")   
+      -- result_font:write(0,300,"System and configuration INFORMATION",45,1,1,1,1)
+      V_pos = draw_info_line(sys.get_env "SERIAL",V_pos,45,"white")   
+      --local serial = sys.get_env "SERIAL"
+      --result_font:write(0,350,"Device Serial Nr :" .. serial,45,1,1,1,1)
       if  screen_width_config == screen_width then 
-         result_font:write(0,400,"Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,45,0,1,0,1)
+         error_collor = "green"
       else 
-         result_font:write(0,400,"Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,45,1,0,0,1)
+        error_coller = "red"
       end 
-      result_font:write(0,450,"Screen config info : " .. screen_error,45,1,1,1,1) 
-      result_font:write(0,500,"This screen will display :" ,45,1,1,1,1)
-      local pos = 550
+      V_pos = draw_info_line("Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,45,error_collor)
+      --if  screen_width_config == screen_width then 
+      --   result_font:write(0,400,"Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,45,0,1,0,1)
+      --else 
+      --   result_font:write(0,400,"Screen width Device / config :" .. screen_width .. " / " .. screen_width_config,45,1,0,0,1)
+      --end 
+      V_pos = draw_info_line("Screen config info : " .. screen_error,V_pos,45,"white")
+      --result_font:write(0,450,"Screen config info : " .. screen_error,45,1,1,1,1) 
+      V_pos = draw_info_line("This screen will display :" ,V_pos,45,"white")
+      --result_font:write(0,500,"This screen will display :" ,45,1,1,1,1)
+      --local pos = 550
       for i,result_file in ipairs(result_files) do
-         result_font:write(0,pos,i .. " - " .. result_file,45,1,1,1,1)
-         pos= pos + 50
+         V_pos = draw_info_line(i .. " - " .. result_file,V_pos,45,"white")
+      --   result_font:write(0,pos,i .. " - " .. result_file,45,1,1,1,1)
+      --   pos= pos + 50
       end
-      result_font:write(0,pos,"Screen Number / Screen Count",45,1,1,1,1)
-      pos = pos + 50 
-      my_text = screen_number .. "/" .. screen_count
-      my_size = screen_height - pos
-      while result_font:width(my_text,my_size) >screen_width do 
-         my_size= my_size - 25
-      end 
-      result_font:write(0,pos,my_text,my_size,1,1,1,1)      
+      V_pos = draw_info_line("Screen Number / Screen Count",V_pos,45,"white")
+      V_pos = draw_info_line(screen_number .. "/" .. screen_count,V_pos,"max","white")
+      --result_font:write(0,pos,"Screen Number / Screen Count",45,1,1,1,1)
+      --pos = pos + 50 
+      --my_text = screen_number .. "/" .. screen_count
+      --my_size = screen_height - pos
+      --while result_font:width(my_text,my_size) >screen_width do 
+      --   my_size= my_size - 25
+      --end 
+      --result_font:write(0,pos,my_text,my_size,1,1,1,1)      
    elseif result_mode == "PIC" then
       gl.translate(540,0,540)
       gl.rotate(rotate, 0, 540,0)
