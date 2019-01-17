@@ -1,0 +1,1 @@
+tcpsvd -vE 127.0.0.1 2121 ftpd -w /space/root/RESULT
