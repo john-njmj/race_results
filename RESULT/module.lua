@@ -124,10 +124,10 @@ function M.draw()
       result_font:write(0,300,"configuration INFO",45,1,1,1,1)
       local serial = sys.get_env "SERIAL"
       result_font:write(0,350,"Device Serial Nr :" .. serial,45,1,1,1,1)
-      if  WIDTH == screen_width then 
-         result_font:write(0,400,"Device Screen width :" .. WIDTH .. " screen width config : " .. screen_width,45,0,1,0,1)
+      if  screen_width_config == screen_width then 
+         result_font:write(0,400,"Device Screen width :" .. screen_width .. " screen width config : " .. screen_width_config,45,0,1,0,1)
       else 
-         result_font:write(0,400,"Device Screen width :" .. WIDTH .. " screen width config : " .. screen_width,45,1,0,0,1)
+         result_font:write(0,400,"Device Screen width :" .. screen_width .. " screen width config : " .. screen_width_config,45,1,0,0,1)
       end 
       result_font:write(0,450,"Screen config info : " .. screen_error,45,1,1,1,1) 
       result_font:write(0,500,"This screen will display :" ,45,1,1,1,1)
@@ -136,8 +136,9 @@ function M.draw()
          result_font:write(0,pos,i .. " - " .. result_file,45,1,1,1,1)
          pos= pos + 50
       end
-      result_font:write(0,screen_height - 800,"Screen Number / Screen Count",45,1,1,1,1)      
-      result_font:write(0,screen_height - 750,screen_number .. "/" .. screen_count,750,1,1,1,1)      
+      result_font:write(0,pos,"Screen Number / Screen Count",45,1,1,1,1)
+      pos = pos + 50 
+      result_font:write(0,pos,screen_number .. "/" .. screen_count,screen_height - pos,1,1,1,1)      
    elseif result_mode == "PIC" then
       gl.translate(540,0,540)
       gl.rotate(rotate, 0, 540,0)
