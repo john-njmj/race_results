@@ -1,12 +1,13 @@
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
- if [ "$SERIAL" = "4015827474"] 
+ if [ "$SERIAL" = "4015827474" ] 
  then
   wget -r -l 0 http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/
   sleep 10
  else
   echo "P2P"
+  echo $SERIAL
   sleep 10
  fi 
 done  
