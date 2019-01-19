@@ -103,7 +103,7 @@ local function update_parameter(par_name,par_val)
        set_screen_rotation(par_val)
    elseif par_name == "result_files" then       
       result_files ={} 
-      for idx = 1, #par_val
+      for idx = 1, #par_val do
           result_files[idx]=par_val[idx]    
       end     
    else
