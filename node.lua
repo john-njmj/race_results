@@ -104,7 +104,8 @@ local function update_parameter(par_name,par_val)
    elseif par_name == "result_files" then       
       result_files ={} 
       for idx = 1, #par_val do
-          result_files[idx]=par_val.filename    
+         local my_file = par_val[idx]
+          result_files[idx]=my_file.filename    
       end     
    else
       print ("unknown PARAMETER :", par_name)
