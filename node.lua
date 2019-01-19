@@ -37,7 +37,7 @@ local function set_screen_rotation(my_rotation)
    screen_oriantation = my_rotation
    screen_rotation_function = util.screen_transform(my_rotation)
    -- recoalculate width and height
-   if my_rotation == 0 or my_rotation == 270 then 
+   if my_rotation == 0 or my_rotation == 180 then 
       screen_width = NATIVE_WIDTH 
       screen_height = NATIVE_HEIGHT 
    else -- portrate swap height and width
