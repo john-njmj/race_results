@@ -26,13 +26,14 @@ scroller_offset = 0 -- sum of screen width of screens before this screen
 scroller_font = resource.load_font("font.ttf") -- not in screen.ini
 
 -- result parameters and defaults
-result_mode ="PIC"   -- RESULT - INFO - PIC
+result_mode ="RESULT"   -- RESULT - INFO - PIC
 result_size = 40
 result_files={}
 result_font = resource.load_font("font.ttf") -- not in ini
 
 -- funtions 
 local function set_screen_rotation(my_rotation)
+   gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
    screen_oriantation = my_rotation
    screen_rotation_function = util.screen_transform(my_rotation)
    -- recoalculate width and height
@@ -61,8 +62,7 @@ local function scroller_update(my_text, my_space, my_size)
 end
 
 local function update_parameter(par_name,par_val) 
-   print ("Found parameter : ",par_name)
-   print ("with Value : ",par_val)
+   print ("Parameter : ",par_name," Value : ",par_val)
    if par_name == "screen_number" then 
       screen_number = tonumber(par_val)
    elseif par_name == "scroller_mode" then 
@@ -211,8 +211,8 @@ if CONTENTS['config.json'] then
 end
 -- Open TCP and UDP connection for Live updates
 node.alias "scroller"
-node.event("input", decode_parameter_line) -- listen to TCP
-node.event("data", decode_parameter_line)  -- listen to UDP
+--node.event("input", decode_parameter_line) -- listen to TCP
+--node.event("data", decode_parameter_line)  -- listen to UDP
 
 
 
