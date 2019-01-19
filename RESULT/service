@@ -2,7 +2,7 @@ mkdir TEMP
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv -O ./TEMP
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv -O ./TEMP/MM.csv
   mv ./TEMP/MM.csv MM.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv
