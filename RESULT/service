@@ -3,29 +3,29 @@ while [ "$INPUT_STRING" != "bye" ]
 do
  if [ "$SERIAL" = "4015827474" ] 
  then
-  wget -r -l 0 http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/
-  sleep 10
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PM.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PJ.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SM.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SJ.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CM.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CJ.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JD.csv
+  sleep 2
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JH.csv
+  sleep 120
  else
   echo "P2P"
   echo $SERIAL
-  sleep 10
+  sleep 3600
  fi 
-done  
-  sleep 5
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PM.csv
-  sleep 5
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PJ.csv
-  sleep 5
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SM.csv
-  sleep 5
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SJ.csv
-  sleep 5
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CM.csv
-  sleep 5
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CJ.csv
-  sleep 5
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JD.csv
-  sleep 5
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JH.csv
-  sleep 5
-done
+done 
