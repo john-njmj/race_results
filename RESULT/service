@@ -1,1 +1,2 @@
+adduser ftp < john1
 tcpsvd -vE 0.0.0.0 2121 ftpd -w /space/root/RESULT
