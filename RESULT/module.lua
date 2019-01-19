@@ -11,9 +11,9 @@ local rotate = 0
 
 function init_results ()
    for i,result_file in ipairs(result_files) do
-      if name == result_file then
+      --if name == result_file then
          results[i] = "Null"
-      end
+      --end
    end
 end
 
