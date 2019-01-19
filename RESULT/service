@@ -1,26 +1,34 @@
-mkdir TEMP
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv -O ./TEMP/MM.csv
-  mv ./TEMP/MM.csv MM.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv -O ./NEW.csv
+  mv NEW.csv MM.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv -O ./NEW.csv
+  mv .NEW.csv MJ.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PM.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PM.csv ./NEW.csv
+  mv .NEW.csv PM.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PJ.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PJ.csv ./NEW.csv
+  mv .NEW.csv PJ.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SM.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SM.csv ./NEW.csv
+  mv .NEW.csv SM.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SJ.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SJ.csv ./NEW.csv
+  mv .NEW.csv SJ.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CM.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CM.csv ./NEW.csv
+  mv .NEW.csv CM.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CJ.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CJ.csv ./NEW.csv
+  mv .NEW.csv CJ.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JD.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JD.csv ./NEW.csv
+  mv .NEW.csv JD.csv
   sleep 2
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JH.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JH.csv ./NEW.csv
+  mv .NEW.csv JH.csv
   sleep 120
 done 
