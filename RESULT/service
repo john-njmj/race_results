@@ -1,2 +1,4 @@
-adduser ftp < john1
-tcpsvd -vE 0.0.0.0 2121 ftpd -w /space/root/RESULT
+:loop
+wget http://www.skeelerteamevergem.be/LIVERESULTS 
+sleep 1m
+goto :loop
