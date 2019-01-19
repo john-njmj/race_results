@@ -28,7 +28,7 @@ scroller_font = resource.load_font("font.ttf") -- not in screen.ini
 -- result parameters and defaults
 result_mode ="PIC"   -- RESULT - INFO - PIC
 result_size = 40
-result_files={"results_sm.csv", "results_sj.csv"}
+result_files={}
 result_font = resource.load_font("font.ttf") -- not in ini
 
 -- funtions 
@@ -101,6 +101,11 @@ local function update_parameter(par_name,par_val)
          screen_count = tonumber(par_val)
    elseif par_name == "screen_oriantation" then 
        set_screen_rotation(par_val)
+   elseif par_name == "result_files" then       
+      result_files ={} 
+      for idx = 1, #par_val
+          result_files[idx]=par_val[idx]    
+      end     
    else
       print ("unknown PARAMETER :", par_name)
    end
@@ -152,7 +157,8 @@ local function load_json_file (raw)
     update_parameter("screen_count",#config.screenlist)
     local serial = sys.get_env "SERIAL"
     local my_offset = 0
-    local found_my_screen = 0 
+    local found_my_screen = 0
+    local idx
     for idx = 1, #config.screenlist do
        local device = config.screenlist[idx]
        if device.screen_id ~= serial then
@@ -166,6 +172,8 @@ local function load_json_file (raw)
               update_parameter("screen_oriantation",device.screenoriantation)
               update_parameter("screen_width_config",device.screenwidth)
               -- LOAD RESULT List
+              update_parameter("result_files",device.resultfiles)
+              -- set found my screen, we only want to load the first definition for this screen 
               found_my_screen = 1
            else
               screen_error = "Screen Defined more than once"
