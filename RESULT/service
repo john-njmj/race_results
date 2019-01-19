@@ -1,9 +1,11 @@
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
+  echo $SERIAL
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv
   sleep 5
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv
+done  
   sleep 5
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PM.csv
   sleep 5
