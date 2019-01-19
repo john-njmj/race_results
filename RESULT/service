@@ -5,5 +5,20 @@ do
   sleep 5
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv
   sleep 5
-  
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PM.csv
+  sleep 5
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PJ.csv
+  sleep 5
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SM.csv
+  sleep 5
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SJ.csv
+  sleep 5
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CM.csv
+  sleep 5
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CJ.csv
+  sleep 5
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JD.csv
+  sleep 5
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JH.csv
+  sleep 5
 done
