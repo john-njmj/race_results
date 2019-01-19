@@ -1,9 +1,9 @@
+mkdir TEMP
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
- if [ "$SERIAL" = "4015827474" ] 
- then
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv -O ./TEMP
+  mv ./TEMP/MM.csv MM.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv
   sleep 2
@@ -23,9 +23,4 @@ do
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JH.csv
   sleep 120
- else
-  echo "P2P"
-  echo $SERIAL
-  sleep 3600
- fi 
 done 
