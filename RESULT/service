@@ -1,7 +1,7 @@
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
- if [ "$SERIAL" = "4015827474"] then
+ if [ "$SERIAL" = "4015827474"] 
  then
   wget -r -l 0 http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/
   sleep 10
