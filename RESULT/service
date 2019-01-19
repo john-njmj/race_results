@@ -1,6 +1,9 @@
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
-  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/*.csv 
-  sleep 10
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MM.csv
+  sleep 5
+  wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv
+  sleep 5
+  
 done
