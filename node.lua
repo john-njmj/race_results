@@ -103,9 +103,9 @@ local function update_parameter(par_name,par_val)
        set_screen_rotation(par_val)
    elseif par_name == "result_files" then       
       result_files ={} 
-      for idx = 1, #par_val do
-         local my_file = par_val[idx]
-          result_files[idx]=my_file.filename    
+      for idx1 = 1, #par_val do
+         local my_file = par_val[idx1]
+          result_files[idx1]=my_file.filename    
       end     
    else
       print ("unknown PARAMETER :", par_name)
