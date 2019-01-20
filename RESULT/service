@@ -5,30 +5,30 @@ do
   mv NEW.csv MM.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/MJ.csv -O ./NEW.csv
-  mv .NEW.csv MJ.csv
+  mv NEW.csv MJ.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PM.csv -O ./NEW.csv
-  mv .NEW.csv PM.csv
+  mv NEW.csv PM.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/PJ.csv -O ./NEW.csv
-  mv .NEW.csv PJ.csv
+  mv NEW.csv PJ.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SM.csv -O ./NEW.csv
-  mv .NEW.csv SM.csv
+  mv NEW.csv SM.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/SJ.csv -O ./NEW.csv
-  mv .NEW.csv SJ.csv
+  mv NEW.csv SJ.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CM.csv -O ./NEW.csv
-  mv .NEW.csv CM.csv
+  mv NEW.csv CM.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/CJ.csv -O ./NEW.csv
-  mv .NEW.csv CJ.csv
+  mv NEW.csv CJ.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JD.csv -O ./NEW.csv
-  mv .NEW.csv JD.csv
+  mv NEW.csv JD.csv
   sleep 2
   wget http://www.skeelerteamevergem.be/Live_results/VK2019/CSV/JH.csv -O ./NEW.csv
-  mv .NEW.csv JH.csv
+  mv NEW.csv JH.csv
   sleep 120
 done 
