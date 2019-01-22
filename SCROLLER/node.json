@@ -12,23 +12,27 @@
           "type": "string",
           "default": "Race Results"
         },
-        {"title": "Text Collor",
+        {"title": "Text Color",
           "ui_width": 5,
-          "name": "t_collor",
-          "type": "string",
-          "default": "Race Results"
+          "name": "t_color",
+          "type": "color",
+          "default": [1,1,1,1]"
         },
-        {"title": "Background Collor",
+        {"title": "Background Color",
           "ui_width": 5,
-          "name": "b_collor",
-          "type": "string",
-          "default": "Race Results"
+          "name": "b_color",
+          "type": "color",
+          "default": [1,1,1,1]"
         },
         {"title": "Actieve",
           "ui_width": 5,
           "name": "t_active",
-          "type": "string",
-          "default": "Race Results"
+          "type": "select",
+          "options": [
+              ["A", "Active"],
+              ["N", "Off"]
+        ],
+          "default": "Active"
         }]},
     
      {"title": "Scrolling Text Separator",
