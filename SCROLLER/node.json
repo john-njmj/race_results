@@ -8,25 +8,25 @@
      "items": [
         {"title": "Text to display",
           "ui_width": 5,
-          "name": "Stext",
+          "name": "s_text",
           "type": "string",
           "default": "Race Results"
         },
         {"title": "Text Collor",
           "ui_width": 5,
-          "name": "Tcollor",
+          "name": "t_collor",
           "type": "string",
           "default": "Race Results"
         },
         {"title": "Background Collor",
           "ui_width": 5,
-          "name": "Bcollor",
+          "name": "b_collor",
           "type": "string",
           "default": "Race Results"
         },
         {"title": "Actieve",
           "ui_width": 5,
-          "name": "SActive",
+          "name": "t_active",
           "type": "string",
           "default": "Race Results"
         }]},
