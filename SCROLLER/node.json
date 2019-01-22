@@ -9,7 +9,7 @@
         {"title": "Show",
           "ui_width": 2,
           "name": "t_active",
-          "hint": "How to show this text, use 'OFF' to prepare texts for later use" 
+          "hint": "How to show this text, use 'OFF' to prepare texts for later use", 
           "type": "select",
           "options":[
                       ["O", "On"],
