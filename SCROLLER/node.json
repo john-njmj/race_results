@@ -16,13 +16,13 @@
           "ui_width": 5,
           "name": "t_color",
           "type": "color",
-          "default": [1,1,1,1]"
+          "default": [1,1,1,1]
         },
         {"title": "Background Color",
           "ui_width": 5,
           "name": "b_color",
           "type": "color",
-          "default": [1,1,1,1]"
+          "default": [1,1,1,1]
         },
         {"title": "Actieve",
           "ui_width": 5,
