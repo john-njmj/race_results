@@ -13,7 +13,7 @@
           "type": "select",
           "options":[
                       ["O", "On"],
-                      ["B", "Blink"]
+                      ["B", "Blink"],
                       ["N", "Off"]
                     ],
           "default": "Active"
