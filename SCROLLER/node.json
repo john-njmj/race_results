@@ -1,0 +1,53 @@
+{"name": "Scroller",
+ "options":[
+    {"title": "Scrolling Text",
+    "name": "scroller_text_list",
+    "hint": " Text to display in the scroller at the top of the screens",
+    "type": "list",
+    "itemname": "scroller_text",
+     "items": [
+        {"title": "Text to display",
+          "ui_width": 5,
+          "name": "Stext",
+          "type": "string",
+          "default": "Race Results"
+        },
+        {"title": "Text Collor",
+          "ui_width": 5,
+          "name": "Tcollor",
+          "type": "string",
+          "default": "Race Results"
+        },
+        {"title": "Background Collor",
+          "ui_width": 5,
+          "name": "Bcollor",
+          "type": "string",
+          "default": "Race Results"
+        },
+        {"title": "Actieve",
+          "ui_width": 5,
+          "name": "SActive",
+          "type": "string",
+          "default": "Race Results"
+        }],
+    
+     {"title": "Scrolling Text Separator",
+     "name": "scroller_space",
+     "ui_width": 3,
+     "hint": "text to be added as a separator in the scroller, will be added to the end of the scrolling text",
+     "type": "string",
+     "default": " --- "},
+     {"title": "Scrolling Speed",
+     "name": "scroller_speed",
+     "hint": "Speed as the scrolling text, negatief values for test scrolling to the left , positief values text scrolleing to the right",
+     "ui_width": 3,
+     "type": "integer",
+     "default": -10},
+     {"title": "Scroller font",
+     "ui_width": 3,
+     "name": "scroller_font",
+     "type": "font",
+     "default": "font.ttf"
+     }                
+    ]
+}
