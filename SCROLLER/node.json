@@ -29,7 +29,7 @@
           "name": "SActive",
           "type": "string",
           "default": "Race Results"
-        }],
+        }]},
     
      {"title": "Scrolling Text Separator",
      "name": "scroller_space",
@@ -48,6 +48,6 @@
      "name": "scroller_font",
      "type": "font",
      "default": "font.ttf"
-     }                
-    ]
+     }
+   ]
 }
