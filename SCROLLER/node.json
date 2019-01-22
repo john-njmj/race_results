@@ -6,6 +6,17 @@
     "type": "list",
     "itemname": "scroller_text",
      "items": [
+        {"title": "Actieve",
+          "ui_width": 5,
+          "name": "t_active",
+          "type": "select",
+          "options": 
+            [
+              ["A", "Active"],
+              ["N", "Off"]
+            ],
+          "default": "Active"
+        },
         {"title": "Text to display",
           "ui_width": 5,
           "name": "s_text",
@@ -22,18 +33,9 @@
           "ui_width": 5,
           "name": "b_color",
           "type": "color",
-          "default": [1,1,1,1]
-        },
-        {"title": "Actieve",
-          "ui_width": 5,
-          "name": "t_active",
-          "type": "select",
-          "options": [
-              ["A", "Active"],
-              ["N", "Off"]
-        ],
-          "default": "Active"
-        }]},
+          "default": [0,0,0,0]
+        }
+        ]},
     
      {"title": "Scrolling Text Separator",
      "name": "scroller_space",
