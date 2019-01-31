@@ -95,6 +95,8 @@ local function update_parameter(par_name,par_val)
       else 
          print ("result_font not found : ",par_val)
       end 
+   elseif par_name == "result_logo" then
+      result_logo = resource.load_image(par_val)
    elseif par_name == "screen_width_config" then
          screen_width_config = tonumber(par_val)
    elseif par_name == "screen_count" then
@@ -152,7 +154,8 @@ local function load_json_file (raw)
     update_parameter("result_size", config.result_size) 
     update_parameter("scroller_font",config.scroller_font.asset_name)
     update_parameter("result_font",config.result_font.asset_name)
-    -- ADD FONT SELECTIONS here
+    update_parameter("result_logo",config.result_logo.asset_name)
+   
    
     -- screen specific seetings 
     update_parameter("screen_count",#config.screenlist)
