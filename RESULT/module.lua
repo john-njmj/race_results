@@ -150,7 +150,7 @@ end
 function M.draw()
 
    if result_mode == "RESULT" then
-      result_logo:draw(screen_width - 217,screen_height - 207, screen_width,screen_height,0.5)
+      result_logo:draw(screen_width - 500 ,screen_height - 500, screen_width,screen_height,0.8)
       V_pos = scroller_size + 10
       for r,result in ipairs(results) do 
          if result ~= "Null" then 
