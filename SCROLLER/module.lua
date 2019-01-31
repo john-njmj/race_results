@@ -3,6 +3,7 @@ local localized, CHILDS, CONTENTS = ...
 local M = {}
 local text
 local scroller_collor
+local json = require "json"
 
 print ("### Scroller INIT")
 
