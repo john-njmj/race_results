@@ -45,7 +45,7 @@ function draw_scroller()
    end
    draw_pos = draw_pos - scroller_offset
 	repeat
-		scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, text_color.r,text_color.b,text_color.g,text_color.a)
+		scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, text_color.r,text_color.g,text_color.b,text_color.a)
       draw_pos = draw_pos + scroller_text_len + scroller_space_len
 	until draw_pos > scroller_offset + screen_width
  
