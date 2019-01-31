@@ -1,7 +1,7 @@
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
-  wget http://laptop1/VK/MM.csv -O ./NEW.csv
+  wget http://laptop1/VK/CSV/MM.csv -O ./NEW.csv
   mv NEW.csv MM.csv
   sleep 2
   wget http://laptop1/VK/CSV/MJ.csv -O ./NEW.csv
