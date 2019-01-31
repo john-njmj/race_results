@@ -9,7 +9,7 @@ print ("### Scroller INIT")
 local function load_config(raw)
     -- proccess the config file 
     local config = json.decode(raw)
-    text_collor = config.t_color
+    text_collor = config.scroller_text_list[1].t_color
 end 
 
 function M.unload()
