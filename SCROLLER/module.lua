@@ -20,7 +20,8 @@ end
 function M.content_update(name)
     print("scroller module content update", name)
     if name == "config.json" then 
-	load_config(name)
+	local my_config = resource.load_file(localized(naam))
+	load_config(my_config)
     end
 end
 
