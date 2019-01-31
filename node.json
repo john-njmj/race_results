@@ -81,7 +81,7 @@
      "ui_width": 3,
      "name": "result_logo",
      "type": "resource",
-     "valid": ["jpg"]
+     "valid": ["image"]
      },  
      {"title": "Screen settings",
      "type": "section"
