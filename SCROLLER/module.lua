@@ -9,7 +9,7 @@ print ("### Scroller INIT")
 local function load_config(raw)
     -- proccess the config file 
     local config = json.decode(raw)
-    scroller_collor = config.scroller_color
+    text_collor = config.t_color
 end 
 
 function M.unload()
@@ -43,7 +43,7 @@ function draw_scroller()
    end
    draw_pos = draw_pos - scroller_offset
 	repeat
-		scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, scroller_color.r,scroller_color.b,scroller_color.g,scroller_color.a)
+		scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, text_color.r,text_color.b,text_color.g,text_color.a)
       draw_pos = draw_pos + scroller_text_len + scroller_space_len
 	until draw_pos > scroller_offset + screen_width
  
