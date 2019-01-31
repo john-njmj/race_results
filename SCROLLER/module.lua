@@ -2,8 +2,15 @@ local localized, CHILDS, CONTENTS = ...
 
 local M = {}
 local text
+local scroller_collor
 
 print ("### Scroller INIT")
+
+local function load_config(raw)
+    -- proccess the config file 
+    local config = json.decode(raw)
+    scroller_collor = config.scroller_color
+end 
 
 function M.unload()
     print "scroller module is unloaded"
@@ -11,6 +18,9 @@ end
 
 function M.content_update(name)
     print("scroller module content update", name)
+    if name = "config.json" then 
+	Load_config(name)
+    end
 end
 
 function M.content_remove(name)
@@ -33,7 +43,7 @@ function draw_scroller()
    end
    draw_pos = draw_pos - scroller_offset
 	repeat
-		scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, 1,1,0,1)
+		scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, scroller_color.r,scroller_color.b,scroller_color.g,scroller_color.a)
       draw_pos = draw_pos + scroller_text_len + scroller_space_len
 	until draw_pos > scroller_offset + screen_width
  
