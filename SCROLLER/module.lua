@@ -18,7 +18,7 @@ end
 
 function M.content_update(name)
     print("scroller module content update", name)
-    if name = "config.json" then 
+    if name == "config.json" then 
 	Load_config(name)
     end
 end
