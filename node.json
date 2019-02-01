@@ -83,7 +83,13 @@
      "type": "resource",
      "valid": ["image"],
       "default": "RSC-Heverlee.jpg"
-     },  
+     },
+     {"title": "% visable",
+     "name": "result_logo_a",
+     "hint": "0 transparant , 100 voledige dekking",
+     "ui_width": 3,
+     "type": "integer",
+     "default": 75},      
      {"title": "Screen settings",
      "type": "section"
      }, 
