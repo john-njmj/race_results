@@ -150,11 +150,13 @@ end
 function M.draw()
 
    if result_mode == "RESULT" then
-      local p_h
-      local p_w
-      p_h = (screen_width / 2)-(result_logo_w /2)
-      p_v = (screen_height /2)-(result_logo_h /2)
-      result_logo:draw(p_h ,p_v, p_h + result_logo_w,p_v + result_logo_h,0.8)
+      if result_logo_a != 0 then
+         local p_h
+         local p_w
+         p_h = (screen_width / 2)-(result_logo_w /2)
+         p_v = (screen_height /2)-(result_logo_h /2)
+         result_logo:draw(p_h ,p_v, p_h + result_logo_w,p_v + result_logo_h,result_logo_a / 100)
+      end
       V_pos = scroller_size + 10
       for r,result in ipairs(results) do 
          if result ~= "Null" then 
