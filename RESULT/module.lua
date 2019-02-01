@@ -150,7 +150,7 @@ end
 function M.draw()
 
    if result_mode == "RESULT" then
-      if result_logo_a != 0 then
+      if result_logo_a ~= 0 then
          local p_h
          local p_w
          p_h = (screen_width / 2)-(result_logo_w /2)
