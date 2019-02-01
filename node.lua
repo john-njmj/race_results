@@ -99,6 +99,8 @@ local function update_parameter(par_name,par_val)
       result_logo = resource.load_image(par_val.asset_name)
       result_logo_w = par_val.metadata.width
       result_logo_h = par_val.metadata.height
+   elseif par_name == "result_logo_a" then    
+      result_logo_a=tonumber(par_val)
    elseif par_name == "screen_width_config" then
          screen_width_config = tonumber(par_val)
    elseif par_name == "screen_count" then
@@ -157,6 +159,7 @@ local function load_json_file (raw)
     update_parameter("scroller_font",config.scroller_font.asset_name)
     update_parameter("result_font",config.result_font.asset_name)
     update_parameter("result_logo",config.result_logo)
+    update_parameter("result_logo_a",config.result_logo_a)
    
    
     -- screen specific seetings 
