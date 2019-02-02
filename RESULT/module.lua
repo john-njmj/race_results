@@ -23,7 +23,7 @@ function load_results(my_result_file)
    for line in my_results:gmatch("[^\n]+") do
       line=trim(line)
       local items={}
-      for item in line:gmatch("[^,]+") do
+      for item in line:gmatch("[^\t]+") do
          items[#items+1] = trim(item)
       end
       lines[#lines+1] = items
