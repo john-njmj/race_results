@@ -28,7 +28,7 @@ scroller_font = resource.load_font("font.ttf") -- not in screen.ini
 -- result parameters and defaults
 result_mode ="RESULT"   -- RESULT - INFO - PIC
 result_size = 40
-result_ref_width_sep  = result_size * 0.5
+result_ref_width_sep  = result_size * 0.4
 result_files={}
 result_font = resource.load_font("font.ttf") -- not in ini
 
@@ -49,7 +49,7 @@ end
 
 local function set_result_param(my_size)
    result_size = my_size
-   result_ref_width_sep = result_size * 0.5
+   result_ref_width_sep = result_size * 0.4
    result_ref_width2 = result_font:width("99", result_size)
    result_ref_width3 = result_font:width("999", result_size)
 end 
