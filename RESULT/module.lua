@@ -66,7 +66,7 @@ function draw_result(lines)
    --Start from right until you are at the first race ( = name +1)
    -- use first line as Reference
    items = lines[1]
-   H_pos[#items] = screen_width - result_ref_width2 - result_ref_width_sep -- Total most right
+   H_pos[#items] = screen_width - result_ref_width2 -- result_ref_width_sep -- Total most right
    for i = #items-1 ,5, -1 do  -- loop over the races 
       H_pos[i]=H_pos[i+1]- result_ref_width2 - result_ref_width_sep
    end
