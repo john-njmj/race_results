@@ -1,6 +1,7 @@
 local localized, CHILDS, CONTENTS = ...
 
 local M = {}
+local texts ={}
 local text
 local scroller_collor
 local json = require "json"
@@ -10,6 +11,22 @@ print ("### Scroller INIT")
 local function load_config(raw)
     -- proccess the config file 
     local config = json.decode(raw)
+    local idx
+	local new_sep {}
+	local new_text {}
+	-- init and remoad texts table - table wil contain alterante a text and a separator item 
+	texts = {} 
+	for idx = 1 , #config.scroller_text_list do
+		new_text=config.scroller_text_list[idx]
+		new_text.t_width = font.width(new_text.s_text,scroller_size)
+		new_text.b_image = resource.create_colored_texture(new_text.b_color.r, new_text.b_color.g, new_text.b_color.b, new_text.b_color.a)
+		-- separator has same parameters as text -> copy and update text and width
+		new_sep = new_text
+		new_sep.s_text = config.scroller_space
+		new_sep.t_width = font.width(new_sep.s_text,scroller_size)
+		texts[(idx*2)-1] = new_text
+		texts[(idx*2)] = new_sep
+	end 
     text_color = config.scroller_text_list[1].t_color
 end 
 
@@ -45,7 +62,7 @@ function draw_scroller()
    end
    draw_pos = draw_pos - scroller_offset
 	repeat
-		scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, text_color.r,text_color.g,text_color.b,text_color.a)
+	  scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, text_color.r,text_color.g,text_color.b,text_color.a)
       draw_pos = draw_pos + scroller_text_len + scroller_space_len
 	until draw_pos > scroller_offset + screen_width
  
