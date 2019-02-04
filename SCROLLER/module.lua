@@ -2,6 +2,7 @@ local localized, CHILDS, CONTENTS = ...
 
 local M = {}
 local texts ={}
+local scroller_len 
 local text
 local scroller_collor
 local json = require "json"
@@ -15,7 +16,8 @@ local function load_config(raw)
 	local new_sep {}
 	local new_text {}
 	-- init and remoad texts table - table wil contain alterante a text and a separator item 
-	texts = {} 
+	texts = {}
+	scroller_len = 0
 	for idx = 1 , #config.scroller_text_list do
 		new_text=config.scroller_text_list[idx]
 		new_text.t_width = font.width(new_text.s_text,scroller_size)
@@ -26,16 +28,17 @@ local function load_config(raw)
 		new_sep.t_width = font.width(new_sep.s_text,scroller_size)
 		texts[(idx*2)-1] = new_text
 		texts[(idx*2)] = new_sep
+		scroller_len = scroller_len + new_text.width = new_sep.width
 	end 
     text_color = config.scroller_text_list[1].t_color
 end 
 
 function M.unload()
-    print "scroller module is unloaded"
+    print "###scroller module is unloaded"
 end
 
 function M.content_update(name)
-    print("scroller module content update", name)
+    print("###scroller module content update", name)
     if name == "config.json" then 
 	local my_config = resource.load_file(localized(name))
 	load_config(my_config)
