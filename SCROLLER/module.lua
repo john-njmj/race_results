@@ -57,7 +57,8 @@ function draw_scroller()
    scroller_pos = scroller_pos + ((curent_time-last_time) * scroller_speed)
    last_time : current_time
    -- rest the postion if we are at a full lengt away from 0
-   if math.abs(scroller_pos) > scroller_len then
+   abs_scroller_pos = math.abs(scroller_pos)
+   if abs_scroller_pos > scroller_len then
 	scroller_pos = 0
    end 
    -- start at the most left position 
