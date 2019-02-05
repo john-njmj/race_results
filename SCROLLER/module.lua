@@ -32,7 +32,16 @@ local function load_config(raw)
 		texts[(idx*2)] = new_sep
 		scroller_len = scroller_len + new_text.width + new_sep.width
 	end 
-    text_color = config.scroller_text_list[1].t_color
+      
+	for idx = 1, #texts do
+           print texts[idx].s_text
+	end 	
+	
+	
+	
+	
+	
+      text_color = config.scroller_text_list[1].t_color
 end 
 
 function M.unload()
