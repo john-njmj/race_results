@@ -15,8 +15,8 @@ local function load_config(raw)
     -- proccess the config file 
     local config = json.decode(raw)
     local idx
-	local new_sep {}
-	local new_text {}
+	local new_sep = {}
+	local new_text = {}
 	-- init and remoad texts table - table wil contain alterante a text and a separator item 
 	texts = {}
 	scroller_len = 0
