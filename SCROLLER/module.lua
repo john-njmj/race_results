@@ -6,6 +6,8 @@ local scroller_len
 local text
 local scroller_collor
 local json = require "json"
+local last_time = sys.now()
+
 
 print ("### Scroller INIT")
 
@@ -50,6 +52,30 @@ function M.content_remove(name)
 end
 
 function draw_scroller()
+   -- move scroller_pos to next postion 
+   local curent_time = sys.now()
+   scroller_pos = scroller_pos + ((curent_time-last_time) * scroller_speed)
+   last_time : current_time
+   -- rest the postion if we are at a full lengt away from 0
+   if math.abs(scroller_pos) > scroller_len then
+	scroller_pos = 0
+   end 
+   -- start at the most left position 
+   if scroller_pos <= 0 then 
+	textstart = scroller_pos 
+   else 
+	textstart = scroller_pos - scroller_len
+   end  
+   -- keep loping over the texts until textend is offscreen
+	repeat
+	   --loop over texts
+		textend = scroller_offset + screen_width +1 -- temp to get out off loop
+		-- update textend
+		-- if on screen draw text and background 
+		-- update textstart (for next run)
+	   -- loop
+	until textend > scroller_offset + screen_width
+		
 	--check if text will be on screen for current position 
    offscreen_pos_left =  0 - scroller_text_len - scroller_space_len
    --reset to most left position  
@@ -69,8 +95,7 @@ function draw_scroller()
       draw_pos = draw_pos + scroller_text_len + scroller_space_len
 	until draw_pos > scroller_offset + screen_width
  
- -- move scroller_pos for next frame
-   scroller_pos = scroller_pos + scroller_speed
+ 
 end 
 
 
