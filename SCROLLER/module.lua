@@ -30,7 +30,7 @@ local function load_config(raw)
 		new_sep.t_width = font.width(new_sep.s_text,scroller_size)
 		texts[(idx*2)-1] = new_text
 		texts[(idx*2)] = new_sep
-		scroller_len = scroller_len + new_text.width = new_sep.width
+		scroller_len = scroller_len + new_text.width + new_sep.width
 	end 
     text_color = config.scroller_text_list[1].t_color
 end 
