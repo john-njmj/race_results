@@ -34,7 +34,7 @@ local function load_config(raw)
 	end 
       
 	for idx = 1, #texts do
-           print texts[idx].s_text
+           print (texts[idx].s_text)
 	end 	
 	
 	
