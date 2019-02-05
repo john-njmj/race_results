@@ -34,8 +34,9 @@ local function load_config(raw)
 		scroller_len = scroller_len + new_text.t_width + new_sep.t_width
 	end 
       
-	for idx = 1, #texts do
-           print ("## TEXTS ## " .. texts[idx].s_text)
+	for idx = 1 , #texts do
+           print ("## IDX ## " .. idx)
+	   print ("## TEXTS ## " .. texts[idx].s_text)
 	end 	
 	
 	
@@ -65,7 +66,7 @@ function draw_scroller()
    -- move scroller_pos to next postion 
    local curent_time = sys.now()
    scroller_pos = scroller_pos + ((curent_time-last_time) * scroller_speed)
-   last_time = current_time
+   last_time = curent_time
    -- rest the postion if we are at a full lengt away from 0
    if math.abs(scroller_pos) > scroller_len then
 	scroller_pos = 0
