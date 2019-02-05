@@ -22,7 +22,7 @@ local function load_config(raw)
 	scroller_len = 0
 	for idx = 1 , #config.scroller_text_list do
 		new_text=config.scroller_text_list[idx]
-		new_text.t_width = font.width(new_text.s_text,scroller_size)
+		new_text.t_width = scroller_font.width(new_text.s_text,scroller_size)
 		new_text.b_image = resource.create_colored_texture(new_text.b_color.r, new_text.b_color.g, new_text.b_color.b, new_text.b_color.a)
 		-- separator has same parameters as text -> copy and update text and width
 		new_sep = new_text
