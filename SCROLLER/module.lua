@@ -87,7 +87,7 @@ function draw_scroller()
 		  if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
 		     text_line.b_image:draw(textstart - scroller_offset, 0,textend - scroller_offset,scroller_size,1)
 		     scroller_font:write(0, 200, sys.now(), scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
-                     scroller_font:write(0, 300, math.floor(sys.now() / 2), scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)					
+                     scroller_font:write(0, 300, (math.floor(sys.now()) % 2), scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)					
 		     if text_line.t_active == "O" or math.floor(sys.now() / 2) == 0 then
 		     	scroller_font:write(textstart - scroller_offset, 0, text_line.s_text, scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
 		     end
