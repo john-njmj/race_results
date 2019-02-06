@@ -15,12 +15,12 @@ local function load_config(raw)
     -- proccess the config file 
     local config = json.decode(raw)
     local idx
-	local new_sep = {}
-	local new_text = {}
 	-- init and remoad texts table - table wil contain alterante a text and a separator item 
 	texts = {}
 	scroller_len = 0
 	for idx = 1 , #config.scroller_text_list do
+		local new_sep = {}
+		local new_text = {}
 		new_text=config.scroller_text_list[idx]
 		print ("## new_text 1## " .. new_text.s_text)
 		new_text.t_width = scroller_font:width(new_text.s_text,scroller_size)
