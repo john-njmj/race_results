@@ -82,20 +82,17 @@ function draw_scroller()
 	textstart = scroller_pos - scroller_len 
    end  
    -- keep loping over the texts until textend is offscreen
-	scroller_font:write(100,300, "textstart : " .. textstart,50,1,1,1,1)
 	repeat
 	   for idx , text_line in ipairs(texts) do
 		--loop over texts
 		textend = textstart + text_line.t_width
 		if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
-		   scroller_font:write(100,400, "ON SCREEN : " .. text_line.s_text,50,1,1,1,1)
-		   --draw background
+		   text_line.b_image:draw(textstart - scroller_offset, 0,textend- scroller-offset,scroller_size,1)
 		   scroller_font:write(textstart - scroller_offset, 0, text_line.s_text, scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
 		end				
 		textstart = textend
 		-- breack if textstart is off screen 
 	   end
-	   scroller_font:write(100,200,	textstart,50,1,1,1,1)
 	until textend > scroller_offset + screen_width
 --OLD code 		
 --	--check if text will be on screen for current position 
