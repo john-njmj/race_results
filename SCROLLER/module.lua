@@ -22,7 +22,6 @@ local function load_config(raw)
 	scroller_len = 0
 	for idx = 1 , #config.scroller_text_list do
 		new_text=config.scroller_text_list[idx]
-		print ("## new_text ## " .. new_text.s_text)
 		new_text.t_width = scroller_font:width(new_text.s_text,scroller_size)
 		new_text.b_image = resource.create_colored_texture(new_text.b_color.r, new_text.b_color.g, new_text.b_color.b, new_text.b_color.a)
 		-- separator has same parameters as text -> copy and update text and width
@@ -33,6 +32,10 @@ local function load_config(raw)
 		texts[((idx*2)-1)] = new_text
 		texts[(idx*2)] = new_sep
 		scroller_len = scroller_len + new_text.t_width + new_sep.t_width
+		print ("## new_text ## " .. new_text.s_text)
+		print ("## new_sep ## " .. new_sep.s_text)
+		print ("## texts [" .. ((idx*2)-1) .. "] ## " .. texts[((idx*2)-1)].s_text)
+		print ("## texts [" .. (idx*2) .. "] ## " .. texts[(idx*2)].s_text)
 	end 
 	for idx , my_text in ipairs(texts) do      
            print ("## IDX ## " .. idx)
