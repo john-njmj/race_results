@@ -93,7 +93,7 @@ function draw_scroller()
 		textstart = textend
 		-- breack if textstart is off screen 
 	   end
-	   scroller_font:write(100,100,	textstart,1,1,1,1)
+	   scroller_font:write(100,100,	textstart,5,1,1,1,1)
 	until textend > scroller_offset + screen_width
 --OLD code 		
 --	--check if text will be on screen for current position 
