@@ -88,6 +88,7 @@ function draw_scroller()
 		--loop over texts
 		textend = textstart + text_line.t_width
 		if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
+		   scroller_font:write(100,400, "ON SCREEN : " .. text_line.s_text,50,1,1,1,1)
 		   --draw background
 		   scroller_font:write(textstart, 0, text_line.s_text, scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
 		end				
