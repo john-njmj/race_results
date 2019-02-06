@@ -10,17 +10,26 @@ local last_time = sys.now()
 
 
 print ("### Scroller INIT")
+local scroller_speed = - 10 -- default scroller_speed
+local scroller_font = resource.load_font(localized("font.ttf")) -- default font 
 
 local function load_config(raw)
     -- proccess the config file 
     local config = json.decode(raw)
     local idx
+	-- 
+	scroller_speed = config.scroller_speed
+	if CONTENTS[config.scroller_sroller_font.asset_name] then
+           scroller_font = resource.load_font(config.scroller_sroller_font.asset_name)
+        else 
+         print ("Scroller_font not found : ",config.scroller_sroller_font.asset_name)
+        end 
+	
+	
 	-- init and reload texts table - table wil contain alterante a text and a separator item 
 	texts = {}
 	scroller_len = 0
 	for idx , text_line in ipairs(config.scroller_text_list) do
-		print ("type text_line: "..type(text_line))
-		print ("type texts: "..type(texts))
 		texts[((idx*2)-1)] ={}
 		texts[((idx*2)-1)].t_active = text_line.t_active
 		texts[((idx*2)-1)].t_color = text_line.t_color
@@ -36,9 +45,6 @@ local function load_config(raw)
 		texts[(idx*2)].t_width = scroller_font:width(config.scroller_space,scroller_size)
 		scroller_len = scroller_len + texts[(idx*2)].t_width
 	end
-	for idx , my_text in ipairs(texts) do      
-           print ("## IDX ## " .. idx.. "TEXT "..my_text.s_text.." W "..my_text.t_width)
-	end 	
       text_color = config.scroller_text_list[1].t_color
 end 
 
