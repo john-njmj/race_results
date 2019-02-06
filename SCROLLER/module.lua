@@ -19,35 +19,25 @@ local function load_config(raw)
 	texts = {}
 	scroller_len = 0
 	for idx = 1 , #config.scroller_text_list do
-		local new_sep = {}
-		local new_text = {}
-		new_text=config.scroller_text_list[idx]
+		local new_text=config.scroller_text_list[idx]
 		print ("## new_text 1## " .. new_text.s_text)
 		new_text.t_width = scroller_font:width(new_text.s_text,scroller_size)
 		new_text.b_image = resource.create_colored_texture(new_text.b_color.r, new_text.b_color.g, new_text.b_color.b, new_text.b_color.a)
-		-- separator has same parameters as text -> copy and update text and width
-		print ("## new_text 2## " .. new_text.s_text)
-		new_sep = new_text
-		print ("## new_text 3## " .. new_text.s_text)
-		new_sep.s_text = config.scroller_space
-		print ("## new_text 4## " .. new_text.s_text)
-		new_sep.t_width = scroller_font:width(new_sep.s_text,scroller_size)
-		print ("## new_text 5## " .. new_text.s_text)
-		texts[((idx*2)-1)] = new_text
-		print ("## new_text 6## " .. new_text.s_text)
-		texts[(idx*2)] = new_sep
-		print ("## new_text 7## " .. new_text.s_text)
-		scroller_len = scroller_len + new_text.t_width + new_sep.t_width
-		print ("## new_text 8## " .. new_text.s_text)
-		print ("## new_sep ## " .. new_sep.s_text)
-		print ("## texts [" .. ((idx*2)-1) .. "] ## " .. texts[((idx*2)-1)].s_text)
-		print ("## texts [" .. (idx*2) .. "] ## " .. texts[(idx*2)].s_text)
+		texts[((idx*2)-1)] = new_text -- save text to the table
+		scroller_len = scroller_len + new_text.t_width 
+		-- separator has starts with same parameters as text -> update text and width
+		new_text.s_text = config.scroller_space
+		new_text.t_width = scroller_font:width(new_text.s_text,scroller_size)
+		texts[(idx*2)] = new_text
+		scroller_len = scroller_len + new_text.t_width 
+		print ("## texts [" .. ((idx*2)-1) .. "] ## " .. texts[((idx*2)-1)].s_text .. " " .. texts[((idx*2)-1)].t_width)
+		print ("## texts [" .. (idx*2) .. "] ## " .. texts[(idx*2)].s_text .. " " .. texts[(idx*2)].t_width)
 	end 
 	for idx , my_text in ipairs(texts) do      
            print ("## IDX ## " .. idx)
-	   print ("## TEXTS ## " .. my_text.s_text)
+	   for idx2 , text_detail in ipairs(my_text) do	
+	   	print ("## " .. idx2 .. " ## " .. text_detail)
 	end 	
-	
       text_color = config.scroller_text_list[1].t_color
 end 
 
