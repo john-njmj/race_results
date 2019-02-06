@@ -67,6 +67,8 @@ end
 function draw_scroller()
    -- move scroller_pos to next postion 
    local curent_time = sys.now()
+   local textstart = 0
+   local textend = 0
    scroller_pos = scroller_pos + ((curent_time-last_time) * scroller_speed)
    last_time = curent_time
    -- rest the postion if we are at a full lengt away from 0
