@@ -34,10 +34,9 @@ local function load_config(raw)
 		texts[(idx*2)] = new_sep
 		scroller_len = scroller_len + new_text.t_width + new_sep.t_width
 	end 
-      
-	for idx = 1 , #texts do
+	for idx , my_text in ipairs(texts) do      
            print ("## IDX ## " .. idx)
-	   print ("## TEXTS ## " .. texts[idx].s_text)
+	   print ("## TEXTS ## " .. my_text.s_text)
 	end 	
 	
       text_color = config.scroller_text_list[1].t_color
