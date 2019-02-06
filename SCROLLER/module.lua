@@ -20,6 +20,14 @@ local function load_config(raw)
 	scroller_len = 0
 	for idx = 1 , #config.scroller_text_list do
 		print ("type config.scroller_text_list[] : ".. type(config.scroller_text_list[idx]))
+		for idx2 , text_detail in ipairs(config.scroller_text_list[idx]) do	
+	   	new_text[idx2] = text_detail
+		print ("## " .. idx2 .. " ## " .. text_detail)
+	   	end
+		for idx2 , text_detail in ipairs(new_text[idx2]) do	
+		print ("## new_text " .. idx2 .. " ## " .. text_detail)
+	   	end
+		
 		local new_text=config.scroller_text_list[idx]
 		print ("## new_text 1## " .. new_text.s_text)
 		new_text.t_width = scroller_font:width(new_text.s_text,scroller_size)
