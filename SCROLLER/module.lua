@@ -19,10 +19,10 @@ local function load_config(raw)
     local idx
 	-- 
 	scroller_speed = config.scroller_speed
-	if CONTENTS[config.scroller_sroller_font.asset_name] then
-           scroller_font = resource.load_font(config.scroller_sroller_font.asset_name)
+	if CONTENTS[config.scroller_font.asset_name] then
+           scroller_font = resource.load_font(config.scroller_font.asset_name)
         else 
-         print ("Scroller_font not found : ",config.scroller_sroller_font.asset_name)
+         print ("Scroller_font not found : ",config.scroller_font.asset_name)
         end 
 	
 	
