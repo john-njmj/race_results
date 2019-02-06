@@ -19,8 +19,8 @@ local function load_config(raw)
 	texts = {}
 	scroller_len = 0
 	for idx , text_line in ipairs(config.scroller_text_list) do
-		print ("type : "..type(text_line))
-		print ("type : "..type(texts))
+		print ("type text_line: "..type(text_line))
+		print ("type texts: "..type(texts))
 		texts[((idx*2)-1)].t_active = text_line.t_active
 		texts[((idx*2)-1)].t_color = text_line.t_color
 		texts[((idx*2)-1)].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
