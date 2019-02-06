@@ -86,7 +86,7 @@ function draw_scroller()
 	   for idx , text_line in ipairs(texts) do
 		--loop over texts
 		textend = textstart + text_line.t_width
-		if (textstart < screen_offset and textend > screen_offset) or (textstart >= screen_offset and textstart <= screen_offset +screen_width) then
+		if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
 		   --draw background
 		   scroller_font:write(textstart, 0, text_line.s_text, scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
 		end				
