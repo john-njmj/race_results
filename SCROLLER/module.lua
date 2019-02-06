@@ -37,6 +37,7 @@ local function load_config(raw)
            print ("## IDX ## " .. idx)
 	   for idx2 , text_detail in ipairs(my_text) do	
 	   	print ("## " .. idx2 .. " ## " .. text_detail)
+	   end
 	end 	
       text_color = config.scroller_text_list[1].t_color
 end 
