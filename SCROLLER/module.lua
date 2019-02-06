@@ -17,6 +17,7 @@ local function load_config(raw)
     local idx
 	-- init and remoad texts table - table wil contain alterante a text and a separator item 
 	texts = {}
+	new_text = {}
 	scroller_len = 0
 	for idx = 1 , #config.scroller_text_list do
 		print ("type config.scroller_text_list[] : ".. type(config.scroller_text_list[idx]))
