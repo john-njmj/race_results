@@ -20,7 +20,7 @@ local function load_config(raw)
 	new_text = {}
 	scroller_len = 0
 	for idx , text_line in ipairs(config.scroller_text_list) do
-		print ("##IDX : "..idx.." type :".. type(text_line)
+		print ("##IDX : "..idx.." type :".. type(text_line))
 	end
 	--	print ("type config.scroller_text_list[] : ".. type(config.scroller_text_list[idx]))
 	--	for idx2 , text_detail in ipairs(config.scroller_text_list[idx]) do	
