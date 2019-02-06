@@ -21,13 +21,14 @@ local function load_config(raw)
 	for idx , text_line in ipairs(config.scroller_text_list) do
 		print ("type text_line: "..type(text_line))
 		print ("type texts: "..type(texts))
+		texts[((idx*2)-1)] ={}
 		texts[((idx*2)-1)].t_active = text_line.t_active
 		texts[((idx*2)-1)].t_color = text_line.t_color
 		texts[((idx*2)-1)].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
 		texts[((idx*2)-1)].s_text = text_line.s_text
 		texts[((idx*2)-1)].t_width = scroller_font:width(text_line.s_text,scroller_size)
 		scroller_len = scroller_len + texts[((idx*2)-1)].t_width
-		
+		texts[(idx*2)] ={}
 		texts[(idx*2)].t_active = text_line.t_active
 		texts[(idx*2)].t_color = text_line.t_color
 		texts[(idx*2)].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
