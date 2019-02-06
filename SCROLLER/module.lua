@@ -25,23 +25,27 @@ local function load_config(raw)
 	-- init and reload texts table - table wil contain alterante a text and a separator item 
 	texts = {}
 	scroller_len = 0
+	local texts_id = 1
 	for idx , text_line in ipairs(config.scroller_text_list) do
-		texts[((idx*2)-1)] ={}
-		texts[((idx*2)-1)].t_active = text_line.t_active
-		texts[((idx*2)-1)].t_color = text_line.t_color
-		texts[((idx*2)-1)].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
-		texts[((idx*2)-1)].s_text = text_line.s_text
-		texts[((idx*2)-1)].t_width = scroller_font:width(text_line.s_text,scroller_size)
-		scroller_len = scroller_len + texts[((idx*2)-1)].t_width
-		texts[(idx*2)] ={}
-		texts[(idx*2)].t_active = text_line.t_active
-		texts[(idx*2)].t_color = text_line.t_color
-		texts[(idx*2)].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
-		texts[(idx*2)].s_text = config.scroller_space 
-		texts[(idx*2)].t_width = scroller_font:width(config.scroller_space,scroller_size)
-		scroller_len = scroller_len + texts[(idx*2)].t_width
+	   if text_line.t_active ~= "N" then -- only add active text to the table
+		texts[texts_id] ={}
+		texts[texts_id].t_active = text_line.t_active
+		texts[texts_id].t_color = text_line.t_color
+		texts[texts_id].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
+		texts[texts_id].s_text = text_line.s_text
+		texts[texts_id].t_width = scroller_font:width(text_line.s_text,scroller_size)
+		scroller_len = scroller_len + texts[texts_id].t_width
+		texts_id = texts_id + 1
+		texts[texts_id] ={}
+		texts[texts_id].t_active = text_line.t_active
+		texts[texts_id].t_color = text_line.t_color
+		texts[texts_id].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
+		texts[texts_id].s_text = config.scroller_space 
+		texts[texts_id].t_width = scroller_font:width(config.scroller_space,scroller_size)
+		scroller_len = scroller_len + texts[texts_id].t_width
+	   end 
 	end
-      text_color = config.scroller_text_list[1].t_color
+     -- text_color = config.scroller_text_list[1].t_color
 end 
 
 function M.unload()
@@ -80,9 +84,10 @@ function draw_scroller()
 	textstart = scroller_pos - scroller_len 
    end  
    -- keep looping over the texts until textend is offscreen or there is nothing do display
+		     	scroller_font:write(0, 200, sys.now(), scroller_size, 1,1,1,1)
 	repeat
 	   for idx , text_line in ipairs(texts) do
-		if text_line.t_active ~= "N" then 
+		-- if text_line.t_active ~= "N" then 
 		  textend = textstart + text_line.t_width
 		  if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
 		     text_line.b_image:draw(textstart - scroller_offset, 0,textend - scroller_offset,scroller_size,1)
@@ -92,7 +97,7 @@ function draw_scroller()
 		  end				
 		  textstart = textend
 		  -- Can be optimized with : breack if textstart is off screen on right 
-	       end
+	       -- end
 	   end
 	until (textend > scroller_offset + screen_width) or (textstart == scroller_pos)
 end 
