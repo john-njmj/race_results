@@ -24,7 +24,7 @@ local function load_config(raw)
 	   	new_text[idx2] = text_detail
 		print ("## " .. idx2 .. " ## " .. text_detail)
 	   	end
-		for idx2 , text_detail in ipairs(new_text[idx2]) do	
+		for idx2 , text_detail in ipairs(new_text) do	
 		print ("## new_text " .. idx2 .. " ## " .. text_detail)
 	   	end
 		
