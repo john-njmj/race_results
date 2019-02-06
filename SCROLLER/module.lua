@@ -15,12 +15,15 @@ local function load_config(raw)
     -- proccess the config file 
     local config = json.decode(raw)
     local idx
-	-- init and remoad texts table - table wil contain alterante a text and a separator item 
+	-- init and reload texts table - table wil contain alterante a text and a separator item 
 	texts = {}
 	new_text = {}
 	scroller_len = 0
 	for idx , text_line in ipairs(config.scroller_text_list) do
 		print ("##IDX : "..idx.." type :".. type(text_line))
+		for idx2 , text_detail in ipairs(text_line) do
+		    print ("##DETAIL : "..idx.." type :".. type(text_line))
+		end
 	end
 	--	print ("type config.scroller_text_list[] : ".. type(config.scroller_text_list[idx]))
 	--	for idx2 , text_detail in ipairs(config.scroller_text_list[idx]) do	
