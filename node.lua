@@ -18,7 +18,7 @@ screen_error = "No error" -- To display config errors in info mode
 scroller_mode = "SCROLLER" -- SCROLLER - INFO
 scroller_pos = 0 -- not in screen.ini or config.json used to sync scroller with TCP connection 
 scroller_size = 200 
-scroller_speed = -10 
+-- scroller_speed = -10 
 scroller_space = " +++ " 
 scroller_text = "STE Results" 
 -- remove scroller_width = WIDTH -- Only used to check config parameter, as other screens need to know the correct WIDTH of this screen   
@@ -70,8 +70,8 @@ local function update_parameter(par_name,par_val)
       scroller_mode = par_val
    elseif par_name == "scroller_size" then
       scroller_update(scroller_text, scroller_space, tonumber(par_val))
-   elseif par_name == "scroller_speed" then
-      scroller_speed = tonumber(par_val)
+   --elseif par_name == "scroller_speed" then
+   --   scroller_speed = tonumber(par_val)
    elseif par_name == "scroller_space" then
       scroller_update(scroller_text, par_val, scroller_size)
    elseif par_name == "scroller_text" then
@@ -154,7 +154,7 @@ local function load_json_file (raw)
     update_parameter("scroller_space",config.scroller_space)
     update_parameter("scroller_mode", config.scroller_mode)
     update_parameter("scroller_size", config.scroller_size)
-    update_parameter("scroller_speed", config.scroller_speed) 
+    --update_parameter("scroller_speed", config.scroller_speed) 
     update_parameter("result_mode",  config.result_mode)
     update_parameter("result_size", config.result_size) 
     update_parameter("scroller_font",config.scroller_font.asset_name)
