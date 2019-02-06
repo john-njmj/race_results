@@ -84,7 +84,6 @@ function draw_scroller()
 	textstart = scroller_pos - scroller_len 
    end  
    -- keep looping over the texts until textend is offscreen or there is nothing do display
-		     	scroller_font:write(0, 200, sys.now(), scroller_size, 1,1,1,1)
 	repeat
 	   for idx , text_line in ipairs(texts) do
 		-- if text_line.t_active ~= "N" then 
