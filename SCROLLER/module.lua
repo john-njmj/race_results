@@ -71,42 +71,46 @@ function draw_scroller()
    last_time = curent_time
    -- rest the postion if we are at a full lengt away from 0
    if math.abs(scroller_pos) > scroller_len then
-	scroller_pos = 0
+	scroller_pos = 0 
    end 
-   -- start at the most left position 
+   -- start at the most left position  
    if scroller_pos <= 0 then 
 	textstart = scroller_pos 
    else 
-	textstart = scroller_pos - scroller_len
+	textstart = scroller_pos - scroller_len 
    end  
    -- keep loping over the texts until textend is offscreen
 	repeat
-	   --loop over texts
-		textend = scroller_offset + screen_width +1 -- temp to get out off loop
-		-- update textend
-		-- if on screen draw text and background 
-		-- update textstart (for next run)
-	   -- loop
+	   for idx , text_line in ipairs(texts) do
+		--loop over texts
+		textend = textstart + text_line.t_width
+		if (textstart < screen_offset and textend > screen_offset) or (textstart >= screen_offset and textstart <= screen_offset +screen_width) then
+		   --draw background
+		   scroller_font:write(textstart, 0, text_line.s_text, scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
+		end				
+		textstart = textend
+		-- breack if textstart is off screen 
+	   end
 	until textend > scroller_offset + screen_width
-		
-	--check if text will be on screen for current position 
-   offscreen_pos_left =  0 - scroller_text_len - scroller_space_len
-   --reset to most left position  
-   while scroller_pos > offscreen_pos_left do
-      scroller_pos = scroller_pos - scroller_text_len - scroller_space_len
-   end
-   -- correct calculation, while always ends a fulltext to far to the left
-   scroller_pos = scroller_pos + scroller_text_len + scroller_space_len
-   -- write text and repeat writing until we are a the end of the screen  
-   draw_pos = scroller_pos 
-   while draw_pos < scroller_offset - scroller_text_len - scroller_space_len do
-      draw_pos = draw_pos + scroller_text_len + scroller_space_len
-   end
-   draw_pos = draw_pos - scroller_offset
-	repeat
-	  scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, text_color.r,text_color.g,text_color.b,text_color.a)
-      draw_pos = draw_pos + scroller_text_len + scroller_space_len
-	until draw_pos > scroller_offset + screen_width
+--OLD code 		
+--	--check if text will be on screen for current position 
+--   offscreen_pos_left =  0 - scroller_text_len - scroller_space_len
+--   --reset to most left position  
+--   while scroller_pos > offscreen_pos_left do
+--      scroller_pos = scroller_pos - scroller_text_len - scroller_space_len
+--  end
+--   -- correct calculation, while always ends a fulltext to far to the left
+--   scroller_pos = scroller_pos + scroller_text_len + scroller_space_len
+--   -- write text and repeat writing until we are a the end of the screen  
+--   draw_pos = scroller_pos 
+--   while draw_pos < scroller_offset - scroller_text_len - scroller_space_len do
+--      draw_pos = draw_pos + scroller_text_len + scroller_space_len
+--   end
+--   draw_pos = draw_pos - scroller_offset
+--	repeat
+--	  scroller_font:write(draw_pos, 0, scroller_text .. scroller_space, scroller_size, text_color.r,text_color.g,text_color.b,text_color.a)
+--      draw_pos = draw_pos + scroller_text_len + scroller_space_len
+--	until draw_pos > scroller_offset + screen_width
  
  
 end 
