@@ -82,6 +82,7 @@ function draw_scroller()
 	textstart = scroller_pos - scroller_len 
    end  
    -- keep loping over the texts until textend is offscreen
+	scroller_font:write(100,300, textstart,5,1,1,1,1)
 	repeat
 	   for idx , text_line in ipairs(texts) do
 		--loop over texts
@@ -93,7 +94,7 @@ function draw_scroller()
 		textstart = textend
 		-- breack if textstart is off screen 
 	   end
-	   scroller_font:write(100,100,	textstart,5,1,1,1,1)
+	   scroller_font:write(100,200,	textstart,5,1,1,1,1)
 	until textend > scroller_offset + screen_width
 --OLD code 		
 --	--check if text will be on screen for current position 
