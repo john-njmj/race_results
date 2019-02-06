@@ -17,46 +17,24 @@ local function load_config(raw)
     local idx
 	-- init and reload texts table - table wil contain alterante a text and a separator item 
 	texts = {}
-	new_text = {}
 	scroller_len = 0
 	for idx , text_line in ipairs(config.scroller_text_list) do
-		print ("##IDX : "..idx.." type :".. type(text_line))
-		for idx2 , text_detail in ipairs(text_line) do
-		    print ("##DETAIL : "..idx.." type :".. type(text_line))
-		end
-	end
-	--	print ("type config.scroller_text_list[] : ".. type(config.scroller_text_list[idx]))
-	--	for idx2 , text_detail in ipairs(config.scroller_text_list[idx]) do	
-	 --  	new_text[idx2] = text_detail
-	--	print ("## " .. idx2 .. " ## " .. text_detail)
-	 --  	end
-	--	for idx2 , text_detail in ipairs(new_text) do	
-	--	print ("## new_text " .. idx2 .. " ## " .. text_detail)
-	--   	end
+		texts[((idx*2)-1)].t_active = text_line.t_active
+		texts[((idx*2)-1)].t_color = text_line.t_color
+		texts[((idx*2)-1)].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
+		texts[((idx*2)-1)].s_text = text_line.s_text
+		texts[((idx*2)-1)].t_width = scroller_font:width(text_line.s_text,scroller_size)
+		scroller_len = scroller_len + texts[((idx*2)-1)].t_width
 		
-	--	local new_text=config.scroller_text_list[idx]
-	--	print ("## new_text 1## " .. new_text.s_text)
-	--	new_text.t_width = scroller_font:width(new_text.s_text,scroller_size)
-	--	new_text.b_image = resource.create_colored_texture(new_text.b_color.r, new_text.b_color.g, new_text.b_color.b, new_text.b_color.a)
-	--	texts[((idx*2)-1)] = new_text -- save text to the table
-	--	print ("## 1- texts [" .. ((idx*2)-1) .. "] ## " .. texts[((idx*2)-1)].s_text .. " " .. texts[((idx*2)-1)].t_width)
-	--	scroller_len = scroller_len + new_text.t_width 
-	--	print ("## 2- texts [" .. ((idx*2)-1) .. "] ## " .. texts[((idx*2)-1)].s_text .. " " .. texts[((idx*2)-1)].t_width)
-	--	-- separator has starts with same parameters as text -> update text and width
-	--	new_text.s_text = config.scroller_space
-	--	print ("## 3- texts [" .. ((idx*2)-1) .. "] ## " .. texts[((idx*2)-1)].s_text .. " " .. texts[((idx*2)-1)].t_width)
-	--	new_text.t_width = scroller_font:width(new_text.s_text,scroller_size)
-	--	print ("## 4- texts [" .. ((idx*2)-1) .. "] ## " .. texts[((idx*2)-1)].s_text .. " " .. texts[((idx*2)-1)].t_width)
-	--	texts[(idx*2)] = new_text
-	--	scroller_len = scroller_len + new_text.t_width 
-	--	print ("## txt texts [" .. ((idx*2)-1) .. "] ## " .. texts[((idx*2)-1)].s_text .. " " .. texts[((idx*2)-1)].t_width)
-	--	print ("## sep texts [" .. (idx*2) .. "] ## " .. texts[(idx*2)].s_text .. " " .. texts[(idx*2)].t_width)
-	--end 
+		texts[(idx*2)].t_active = text_line.t_active
+		texts[(idx*2)].t_color = text_line.t_color
+		texts[(idx*2)].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
+		texts[(idx*2)].s_text = config.scroller_space 
+		texts[(idx*2)].t_width = scroller_font:width(config.scroller_space,scroller_size)
+		scroller_len = scroller_len + texts[(idx*2)].t_width
+	end
 	for idx , my_text in ipairs(texts) do      
-           print ("## IDX ## " .. idx)
-	   for idx2 , text_detail in ipairs(my_text) do	
-	   	print ("## " .. idx2 .. " ## " .. text_detail)
-	   end
+           print ("## IDX ## " .. idx.. "TEXT "..my_text.s_text.." W "..my_text.t_width)
 	end 	
       text_color = config.scroller_text_list[1].t_color
 end 
