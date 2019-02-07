@@ -66,7 +66,8 @@ function draw_scroller()
    	scroller_pos = (sys.now() * scroller_speed) % scroller_len
    else
 	scroller_pos = 0	
-   end 
+   end
+scroller_font:write(0, 200, scroller_pos, scroller_size,1,1,1,1)	
    local textstart = 0
    local textend = 0
    -- rest the postion if we are at a full lengt away from 0
@@ -74,7 +75,7 @@ function draw_scroller()
 --	scroller_pos = 0 
 --   end 
    -- start at the most left position  
-   if scroller_pos < 0 then 
+   if scroller_pos <= 0 then 
 	textstart = scroller_pos 
    else 
 	textstart = scroller_pos - scroller_len 
