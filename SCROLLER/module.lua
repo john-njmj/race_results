@@ -5,29 +5,26 @@ local texts ={}
 local scroller_len = 0
 local json = require "json"
 local scroller_speed = - 10 -- default scroller_speed
-local scroller_font = resource.load_font(localized("font.ttf")) -- default font 
---local last_time = sys.now()
+--local scroller_font = resource.load_font(localized("font.ttf")) -- default font 
 local scroller_pos  = 0
 
 local function load_config(raw)
     -- proccess the config file 
     local config = json.decode(raw)
     local idx
-	-- 
 	scroller_speed = config.scroller_speed
-	if CONTENTS[localized(config.scroller_font.asset_name)] then
-           scroller_font = resource.load_font(localized(config.scroller_font.asset_name))
-        else 
-         print ("Scroller_font not found : ",config.scroller_font.asset_name)
-        end 
-	
-	
+	--if CONTENTS[localized(config.scroller_font.asset_name)] then
+	--	scroller_font = resource.load_font(localized(config.scroller_font.asset_name))
+	--else 
+    --     print ("Scroller_font not found : ",config.scroller_font.asset_name)
+	--end 
 	-- init and reload texts table - table wil contain alterante a text and a separator item 
 	texts = {}
 	scroller_len = 0
-	local texts_id = 1
+	local texts_id = 0
 	for idx , text_line in ipairs(config.scroller_text_list) do
 	   if text_line.t_active ~= "N" then -- only add active text to the table
+		texts_id = texts_id + 1
 		texts[texts_id] ={}
 		texts[texts_id].t_active = text_line.t_active
 		texts[texts_id].t_color = text_line.t_color
@@ -45,7 +42,6 @@ local function load_config(raw)
 		scroller_len = scroller_len + texts[texts_id].t_width
 	   end 
 	end
-     -- text_color = config.scroller_text_list[1].t_color
 end 
 
 function M.unload()
@@ -55,8 +51,8 @@ end
 function M.content_update(name)
     print("###scroller module content update", name)
     if name == "config.json" then 
-	local my_config = resource.load_file(localized(name))
-	load_config(my_config)
+		local my_config = resource.load_file(localized(name))
+		load_config(my_config)
     end
 end
 
