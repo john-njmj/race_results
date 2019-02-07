@@ -74,7 +74,7 @@ function draw_scroller()
 --	scroller_pos = 0 
 --   end 
    -- start at the most left position  
-   if scroller_pos <= 0 then 
+   if scroller_pos < 0 then 
 	textstart = scroller_pos 
    else 
 	textstart = scroller_pos - scroller_len 
