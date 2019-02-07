@@ -79,7 +79,8 @@ scroller_font:write(0, 200, scroller_pos, scroller_size,1,1,1,1)
 	textstart = scroller_pos 
    else 
 	textstart = scroller_pos - scroller_len 
-   end  
+   end
+   scroller_font:write(0, 400, textstart, scroller_size,1,1,1,1)
    -- keep looping over the texts until textend is offscreen or there is nothing do display
 	repeat
 	   for idx , text_line in ipairs(texts) do
