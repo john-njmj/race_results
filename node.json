@@ -38,6 +38,12 @@
      "ui_width": 3,
      "type": "integer",
      "default": 200},
+     {"title": "Scroller font",
+     "ui_width": 3,
+     "name": "scroller_font",
+     "type": "font",
+     "default": "font.ttf"
+     },
      {"title": "Result page settings",
      "type": "section"
      },
