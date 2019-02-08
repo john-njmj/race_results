@@ -61,17 +61,17 @@ function M.content_remove(name)
 end
 
 function draw_scroller()
-   scroller_font:write(0,300,os.time(),95,1,1,1,1)
+   scroller_font:write(0,300,os.time(),95,1,1,1,1) --*** DEBUG ***
    -- calculate scroller_pos relative to the time 
    if scroller_len ~= 0 then 
    	scroller_pos = (os.time() * scroller_speed) % scroller_len
    else
 	scroller_pos = 0	
    end
-   scroller_font:write(0,400,"pos :" ..scroller_pos,95,1,1,1,1)	
-   scroller_font:write(0,500,"pos2 : "..((os.time() % scroller_len)* scroller_speed) ,95,1,1,1,1)	
-   scroller_font:write(0,600,"len : "..scroller_len,95,1,1,1,1)	
-   scroller_font:write(0,700,"speed : "..scroller_speed,95,1,1,1,1)
+   scroller_font:write(0,400,"pos :" ..scroller_pos,95,1,1,1,1)	--*** DEBUG ***
+   scroller_font:write(0,500,"pos2 : "..((os.time() % scroller_len)* scroller_speed) ,95,1,1,1,1) --*** DEBUG ***	
+   scroller_font:write(0,600,"len : "..scroller_len,95,1,1,1,1)	--*** DEBUG ***
+   scroller_font:write(0,700,"speed : "..scroller_speed,95,1,1,1,1) --*** DEBUG ***
    
    local textstart = 0
    local textend = 0
@@ -85,9 +85,11 @@ function draw_scroller()
    else 
 	textstart = scroller_pos - scroller_len 
    end
+   s_draw = 0 
    -- keep looping over the texts until textend is offscreen or there is nothing do display
 	repeat
 	   for idx , text_line in ipairs(texts) do
+		s_draw = 1 
 		-- if text_line.t_active ~= "N" then 
 		  textend = textstart + text_line.t_width
 		  if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
@@ -100,8 +102,7 @@ function draw_scroller()
 		  -- Can be optimized with : breack if textstart is off screen on right 
 	       -- end
 	   end
-	until (textend > scroller_offset + screen_width) or (textstart == scroller_pos)
-end 
+	until (textend > scroller_offset + screen_width) or s_draw = 0  
 
 
 function M.draw()
