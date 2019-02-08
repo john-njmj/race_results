@@ -63,7 +63,7 @@ end
 function draw_scroller()
    -- calculate scroller_pos relative to the time 
    if scroller_len ~= 0 then 
-   	scroller_pos = (sys.now() * scroller_speed) % scroller_len
+   	scroller_pos = (os.time() * scroller_speed) % scroller_len
    else
 	scroller_pos = 0	
    end
@@ -86,7 +86,7 @@ function draw_scroller()
 		  textend = textstart + text_line.t_width
 		  if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
 		     text_line.b_image:draw(textstart - scroller_offset, 0,textend - scroller_offset,scroller_size,1)
-		     if text_line.t_active == "O" or (math.floor(sys.now()) % 2) == 0 then
+		     if text_line.t_active == "O" or (math.floor(os.time()) % 2) == 0 then
 		     	scroller_font:write(textstart - scroller_offset, 0, text_line.s_text, scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
 		     end
 		  end				
