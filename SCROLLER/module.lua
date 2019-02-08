@@ -85,12 +85,9 @@ function draw_scroller()
    else 
 	textstart = scroller_pos - scroller_len 
    end
-   s_draw = 0 
    -- keep looping over the texts until textend is offscreen or there is nothing do display
 	repeat
 	   for idx , text_line in ipairs(texts) do
-		s_draw = 1 
-		-- if text_line.t_active ~= "N" then 
 		  textend = textstart + text_line.t_width
 		  if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
 		     text_line.b_image:draw(textstart - scroller_offset, 0,textend - scroller_offset,scroller_size,1)
@@ -100,9 +97,8 @@ function draw_scroller()
 		  end				
 		  textstart = textend
 		  -- Can be optimized with : breack if textstart is off screen on right 
-	       -- end
 	   end
-	until (textend > scroller_offset + screen_width) or s_draw = 0  
+	until (textend > scroller_offset + screen_width) or scroller_len == 0  
 
 
 function M.draw()
