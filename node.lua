@@ -28,7 +28,7 @@ scroller_font = resource.load_font("font.ttf") -- not in screen.ini
 -- result parameters and defaults
 result_mode ="RESULT"   -- RESULT - INFO - PIC
 result_size = 40
-result_ref_width_sep  = result_size * 0.4
+result_ref_width_sep  = 15
 result_files={}
 result_font = resource.load_font("font.ttf") -- not in ini
 
@@ -47,9 +47,9 @@ local function set_screen_rotation(my_rotation)
    end      
 end 
 
-local function set_result_param(my_size)
+local function set_result_param(my_size , my_sep_size)
    result_size = my_size
-   result_ref_width_sep = result_size * 0.4
+   result_ref_width_sep = my_sep_size
    result_ref_width2 = result_font:width("99", result_size)
    result_ref_width3 = result_font:width("999", result_size)
 end 
@@ -83,7 +83,9 @@ local function update_parameter(par_name,par_val)
    elseif par_name == "result_mode" then 
       result_mode = par_val
    elseif par_name == "result_size" then    
-      set_result_param(tonumber(par_val))
+      set_result_param(tonumber(par_val),result_ref_width_sep)
+   elseif par_name == "result_sep" then    
+      set_result_param(result_size,tonumber(par_val))
    elseif par_name == "scroller_font" then
       if CONTENTS[par_val] then
          scroller_font = resource.load_font(par_val)
@@ -156,7 +158,8 @@ local function load_json_file (raw)
     update_parameter("scroller_size", config.scroller_size)
 --    update_parameter("scroller_speed", config.scroller_speed) 
     update_parameter("result_mode",  config.result_mode)
-    update_parameter("result_size", config.result_size) 
+    update_parameter("result_size", config.result_sep)
+    update_parameter("result_sep", config.result_sep)
     update_parameter("scroller_font",config.scroller_font.asset_name)
     update_parameter("result_font",config.result_font.asset_name)
     update_parameter("result_logo",config.result_logo)
@@ -203,7 +206,7 @@ end
 -- ### INIT #### START OF THE MAIN PROGRAM
 -- run delfault calculations 
 set_screen_rotation(screen_oriantation)
-set_result_param(result_size)
+set_result_param(result_size,result_ref_width_sep)
 scroller_update(scroller_text, scroller_space,scroller_size)
 
 -- load paramteres from SCREEN.ini and/or config.json file , add watch the files to reload on changes
