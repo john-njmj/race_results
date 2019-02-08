@@ -61,14 +61,14 @@ function M.content_remove(name)
 end
 
 function draw_scroller()
-   scroller_font:write(0,300,os.time(),1,1,1,1)
+   scroller_font:write(0,300,os.time(),100,1,1,1,1)
    -- calculate scroller_pos relative to the time 
    if scroller_len ~= 0 then 
    	scroller_pos = (os.time() * scroller_speed) % scroller_len
    else
 	scroller_pos = 0	
    end
-   scroller_font:write(0,300,scroller_pos,1,1,1,1)	
+   scroller_font:write(0,450,scroller_pos,100,1,1,1,1)	
    local textstart = 0
    local textend = 0
    -- rest the postion if we are at a full lengt away from 0
