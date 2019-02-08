@@ -30,7 +30,7 @@ local function load_config(raw)
 		texts[texts_id].t_color = text_line.t_color
 		texts[texts_id].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
 		texts[texts_id].s_text = text_line.s_text
-		texts[texts_id].t_width = scroller_font:width(text_line.s_text,scroller_size)
+		texts[texts_id].t_width = scroller_font:width(text_line.s_text,scroller_size) + 10
 		scroller_len = scroller_len + texts[texts_id].t_width
 		texts_id = texts_id + 1
 		texts[texts_id] ={}
@@ -38,7 +38,7 @@ local function load_config(raw)
 		texts[texts_id].t_color = text_line.t_color
 		texts[texts_id].b_image = resource.create_colored_texture(text_line.b_color.r, text_line.b_color.g, text_line.b_color.b, text_line.b_color.a)
 		texts[texts_id].s_text = config.scroller_space 
-		texts[texts_id].t_width = scroller_font:width(config.scroller_space,scroller_size)
+		texts[texts_id].t_width = scroller_font:width(config.scroller_space,scroller_size) + 10
 		scroller_len = scroller_len + texts[texts_id].t_width
 	   end 
 	end
@@ -90,9 +90,9 @@ function draw_scroller()
 	   for idx , text_line in ipairs(texts) do
 		  textend = textstart + text_line.t_width
 		  if (textstart < scroller_offset and textend > scroller_offset) or (textstart >= scroller_offset and textstart <= scroller_offset +screen_width) then
-		     text_line.b_image:draw(textstart - scroller_offset, 0,textend - scroller_offset,scroller_size,1)
+		     text_line.b_image:draw(textstart - scroller_offset + 5, 0,textend - scroller_offset,scroller_size,1)
 		     if text_line.t_active == "O" or (math.floor(os.time()) % 2) == 0 then
-		     	scroller_font:write(textstart - scroller_offset, 0, text_line.s_text, scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
+		     	scroller_font:write(textstart - scroller_offset + 5, 0, text_line.s_text, scroller_size, text_line.t_color.r,text_line.t_color.g,text_line.t_color.b,text_line.t_color.a)
 		     end
 		  end				
 		  textstart = textend
