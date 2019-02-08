@@ -69,9 +69,10 @@ function draw_scroller()
 	scroller_pos = 0	
    end
    scroller_font:write(0,400,"pos :" ..scroller_pos,95,1,1,1,1)	
-   scroller_font:write(0,500,"len : "..scroller_len,95,1,1,1,1)	
-   scroller_font:write(0,600,"speed : "..scroller_speed,95,1,1,1,1)
-   scroller_font:write(0,700,"speed2 : "..(os.time()% scroller_len)* scroller_speed ,95,1,1,1,1)	
+   scroller_font:write(0,500,"pos2 : "..((os.time() % scroller_len)* scroller_speed) ,95,1,1,1,1)	
+   scroller_font:write(0,600,"len : "..scroller_len,95,1,1,1,1)	
+   scroller_font:write(0,700,"speed : "..scroller_speed,95,1,1,1,1)
+   
    local textstart = 0
    local textend = 0
    -- rest the postion if we are at a full lengt away from 0
