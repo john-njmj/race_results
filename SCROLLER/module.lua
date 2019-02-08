@@ -99,7 +99,7 @@ function draw_scroller()
 		  -- Can be optimized with : breack if textstart is off screen on right 
 	   end
 	until (textend > scroller_offset + screen_width) or scroller_len == 0  
-
+end
 
 function M.draw()
    if scroller_mode == "SCROLLER" then 
