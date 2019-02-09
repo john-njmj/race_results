@@ -100,8 +100,9 @@ local function update_parameter(par_name,par_val)
       end 
    elseif par_name == "result_logo" then
       result_logo = resource.load_image(par_val.asset_name)
-      result_logo_w = par_val.metadata.width
-      result_logo_h = par_val.metadata.height
+      local result_log_scale = screen_width * 0.8 / par_val.metadata.width
+      result_logo_w = par_val.metadata.width * result_log_scale
+      result_logo_h = par_val.metadata.height * result_log_scale
    elseif par_name == "result_logo_a" then    
       result_logo_a=tonumber(par_val)
    elseif par_name == "screen_width_config" then
