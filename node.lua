@@ -52,6 +52,7 @@ local function set_result_param(my_size , my_sep_size)
    result_ref_width_sep = my_sep_size
    result_ref_width2 = result_font:width("99", result_size)
    result_ref_width3 = result_font:width("999", result_size)
+   result_ref_width4 = result_font:width("9999", result_size)
 end 
 local function scroller_update(my_text, my_space, my_size)
    -- set text & spacer and calculate the length
