@@ -66,7 +66,7 @@ function draw_result(lines)
    --Start from right until you are at the first race ( = name +1)
    -- use first line as Reference
    items = lines[1]
-   H_pos[#items] = screen_width - result_ref_width2 -- result_ref_width_sep -- Total most right
+   H_pos[#items] = screen_width - result_ref_width3 -- Total most right
    for i = #items-1 ,5, -1 do  -- loop over the races 
       H_pos[i]=H_pos[i+1]- result_ref_width2 - result_ref_width_sep
    end
@@ -89,6 +89,10 @@ function draw_result(lines)
             result_font:write(titel_H_pos,V_pos,line[3],result_size * 2 ,1,1,0,1)
             V_pos = V_pos + (result_size * 2 ) + 10
       end
+      -- *** DEBUG ***
+      for j,item in ipairs(H_pos) do
+         result_font:write(H_pos[j],V_pos, item,result_size,1,1,1,a)
+      end    
       -- loop over the items
       for j,item in ipairs(line) do
          -- special action for item 3 Title/Name
