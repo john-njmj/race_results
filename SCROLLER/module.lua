@@ -61,17 +61,17 @@ function M.content_remove(name)
 end
 
 function draw_scroller()
-   scroller_font:write(0,300,os.time(),95,1,1,1,1) --*** DEBUG ***
+   --scroller_font:write(0,300,os.time(),95,1,1,1,1) --*** DEBUG ***
    -- calculate scroller_pos relative to the time 
    if scroller_len ~= 0 then 
    	scroller_pos = (os.time() * scroller_speed) % scroller_len
    else
 	scroller_pos = 0	
    end
-   scroller_font:write(0,400,"pos :" ..scroller_pos,95,1,1,1,1)	--*** DEBUG ***
-   scroller_font:write(0,500,"pos2 : "..((os.time() % scroller_len)* scroller_speed) ,95,1,1,1,1) --*** DEBUG ***	
-   scroller_font:write(0,600,"len : "..scroller_len,95,1,1,1,1)	--*** DEBUG ***
-   scroller_font:write(0,700,"speed : "..scroller_speed,95,1,1,1,1) --*** DEBUG ***
+   --scroller_font:write(0,400,"pos :" ..scroller_pos,95,1,1,1,1)	--*** DEBUG ***
+   --scroller_font:write(0,500,"pos2 : "..((os.time() % scroller_len)* scroller_speed) ,95,1,1,1,1) --*** DEBUG ***	
+   --scroller_font:write(0,600,"len : "..scroller_len,95,1,1,1,1)	--*** DEBUG ***
+   --scroller_font:write(0,700,"speed : "..scroller_speed,95,1,1,1,1) --*** DEBUG ***
    
    local textstart = 0
    local textend = 0
