@@ -68,7 +68,7 @@ function draw_result(lines)
    items = lines[1]
    H_pos[#items] = screen_width - result_ref_width3 -- Total most right
    for i = #items-1 ,5, -1 do  -- loop over the races 
-      H_pos[i]=H_pos[i+1]- result_ref_width2 - result_ref_width_sep
+      H_pos[i]=H_pos[i+1]- result_ref_width3 - result_ref_width_sep
    end
    H_pos[4] = H_pos[5] - result_ref_width4 - result_ref_width_sep -- club code 
    max_size_name = H_pos[4] - H_pos[3] 
