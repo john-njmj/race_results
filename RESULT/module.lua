@@ -92,6 +92,7 @@ function draw_result(lines)
       -- *** DEBUG ***
       for j,item in ipairs(H_pos) do
          result_font:write(H_pos[j],V_pos, item,result_size,1,1,1,a)
+         V_pos= V_pos + result_size + 5
       end    
       -- loop over the items
       for j,item in ipairs(line) do
