@@ -3,6 +3,7 @@ local localized, CHILDS, CONTENTS = ...
 
 print("RESULTS sub module INIT")
 local M = {}
+local json = require "json"
 local results = {}
 local clublogos = {}
 local V_pos = scroller_size + 10
