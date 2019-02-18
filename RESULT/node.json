@@ -18,7 +18,7 @@
        "name": "code",
        "type": "string",
        "hint": "3 Digit Club code to assing logo to",
-       "default": ''
+       "default": "STE"
         }]
 }]
  
