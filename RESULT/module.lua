@@ -4,10 +4,22 @@ local localized, CHILDS, CONTENTS = ...
 print("RESULTS sub module INIT")
 local M = {}
 local results = {}
+local clublogos = {}
 local V_pos = scroller_size + 10
 --local pic1 = resource.load_image(localized("foto1.jpg"))
 --local pic2 = resource.load_image(localized("foto2.jpg"))
 local rotate = 0 
+
+local function load_config(raw)
+    -- proccess the config file 
+    local config = json.decode(raw)
+    local idx
+    local clublogo = {}
+	 clublogos ={} -- (re)init the table with the logos 
+    for idx , clublogo in ipairs(config.clublogos) do
+      clublogos[clublogo.code] = resource.load_image(localized(clublogo.file.asset_name))
+    end 
+end 
 
 function init_results ()
    for i,result_file in ipairs(result_files) do
@@ -43,7 +55,11 @@ function M.content_update(name)
          print("found ", result_file , " = ",name)
          results[i] = load_results(name)
       end
-    end   
+    end
+    if name == "config.json" then 
+		local my_config = resource.load_file(localized(name))
+		load_config(my_config)
+    end
 end
 
 function M.content_remove(name)
@@ -70,7 +86,7 @@ function draw_result(lines)
    for i = #items-1 ,5, -1 do  -- loop over the races 
       H_pos[i]=H_pos[i+1]- result_ref_width3 - result_ref_width_sep
    end
-   H_pos[4] = H_pos[5] - result_ref_width4 - result_ref_width_sep -- club code 
+   H_pos[4] = H_pos[5] - result_ref_width4 - result_ref_width_sep - result_size - result_ref_width_sep -- club code 
    max_size_name = H_pos[4] - H_pos[3] 
   
    for i,line in ipairs(lines) do
@@ -101,7 +117,12 @@ function draw_result(lines)
               end
             result_font:write(H_pos[j],V_pos,item,name_size,1,1,0,a)
            end
-         else
+         elseif j == 4 then  -- special action for item 4 Club code 
+            if clublogos[item] ~= nil then  
+               clublogos[item]:draw(H_pos[j],V_pos, H_pos[j] + result_size,V_pos + result_size,a)
+            end 
+            result_font:write(H_pos[j] + result_size + result_ref_width_sep,V_pos, item,result_size,1,1,1,a)
+         else   
             result_font:write(H_pos[j],V_pos, item,result_size,1,1,1,a)
          end
       end
