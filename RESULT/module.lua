@@ -15,8 +15,11 @@ local function load_config(raw)
     local config = json.decode(raw)
     local idx
     local clublogo = {}
-	 clublogos ={} -- (re)init the table with the logos 
+	 clublogos = {} -- (re)init the table with the logos 
     for idx , clublogo in ipairs(config.clublogos) do
+		print (idx)
+		print ("code : "..clublogo.code)
+		print ("file : " ..clublogo.file.asset_name)
       clublogos[clublogo.code] = resource.load_image(localized(clublogo.file.asset_name))
     end 
 end 
@@ -120,7 +123,9 @@ function draw_result(lines)
          elseif j == 4 then  -- special action for item 4 Club code 
             if clublogos[item] ~= nil then  
                clublogos[item]:draw(H_pos[j],V_pos, H_pos[j] + result_size,V_pos + result_size,a)
-            end 
+            else
+	    result_font:write(H_pos[j] ,V_pos, item,result_size,1,1,1,a)
+	    end 
             result_font:write(H_pos[j] + result_size + result_ref_width_sep,V_pos, item,result_size,1,1,1,a)
          else   
             result_font:write(H_pos[j],V_pos, item,result_size,1,1,1,a)
