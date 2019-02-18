@@ -1,3 +1,25 @@
 {"name": "Race Results window",
-"permissions": {"network": "Needs to recive the csv files"}
+"permissions": {"network": "Needs to recive the csv files"},
+"options": [
+  {"title": "Club Logo's",
+   "name": "clublogos",
+   "type": "list",
+   "itemname": "logo",
+   "items": [{
+       "title": "logo",
+       "ui_width": 5,
+       "name": "file",
+       "type": "resource",
+       "valid": ["image"],
+       "default": "STE.jpg"
+       },{
+       "title": "club code",
+       "ui_width": 3,
+       "name": "code",
+       "type": "string",
+       "hint": "3 Digit Club code to assing logo to",
+       "default": ''
+        }]
+}]
+ 
 }
