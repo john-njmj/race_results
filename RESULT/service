@@ -1,46 +1,48 @@
 INPUT_STRING=hello
 while [ "$INPUT_STRING" != "bye" ]
 do
-  wget http://192.168.1.100/VK/CSV/MM.csv -O ./MM.csv
-  sleep 2
-  wget http://192.168.5.233/VK/CSV/MM.csv -O ./MM.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/MM.csv -O ./MM.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/MJ.csv -O ./MJ.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/MJ.csv -O ./MJ.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/PM.csv -O ./PM.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/PM.csv -O ./PM.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/PJ.csv -O ./PJ.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/PJ.csv -O ./PJ.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/SM.csv -O ./SM.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/SM.csv -O ./SM.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/SJ.csv -O ./SJ.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/SJ.csv -O ./SJ.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/CM.csv -O ./CM.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/CM.csv -O ./CM.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/CJ.csv -O ./CJ.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/CJ.csv -O ./CJ.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/JD.csv -O ./JD.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/JD.csv -O ./JD.csv
-  sleep 2
-  wget http://192.168.1.100/VK/CSV/JH.csv -O ./JH.csv
-  sleep 2
-  wget http://192.168.1.101/VK/CSV/JH.csv -O ./JH.csv
-  sleep 2
+wget http://www.skeelerteamevergem.be/Live_results/ISIV2019/CSV/MM.csv -O ./MM.csv
+sleep 120
+#  wget http://192.168.1.100/VK/CSV/MM.csv -O ./MM.csv
+#  sleep 2
+#  wget http://192.168.5.233/VK/CSV/MM.csv -O ./MM.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/MM.csv -O ./MM.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/MJ.csv -O ./MJ.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/MJ.csv -O ./MJ.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/PM.csv -O ./PM.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/PM.csv -O ./PM.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/PJ.csv -O ./PJ.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/PJ.csv -O ./PJ.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/SM.csv -O ./SM.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/SM.csv -O ./SM.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/SJ.csv -O ./SJ.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/SJ.csv -O ./SJ.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/CM.csv -O ./CM.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/CM.csv -O ./CM.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/CJ.csv -O ./CJ.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/CJ.csv -O ./CJ.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/JD.csv -O ./JD.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/JD.csv -O ./JD.csv
+#  sleep 2
+#  wget http://192.168.1.100/VK/CSV/JH.csv -O ./JH.csv
+#  sleep 2
+#  wget http://192.168.1.101/VK/CSV/JH.csv -O ./JH.csv
+#  sleep 2
 done 
