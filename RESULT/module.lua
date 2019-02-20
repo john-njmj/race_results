@@ -119,9 +119,9 @@ function draw_result(lines)
             result_font:write(H_pos[j],V_pos,item,name_size,1,1,0,a)
            end
          elseif j == 4 then  -- special action for item 4 Club code 
-            if clublogos[item] ~= nil then  
-               clublogos[item]:draw(H_pos[j],V_pos, H_pos[j] + result_size,V_pos + result_size,a)
-	    end 
+            --if clublogos[item] ~= nil then  
+            --   clublogos[item]:draw(H_pos[j],V_pos, H_pos[j] + result_size,V_pos + result_size,a)
+	    --end 
             result_font:write(H_pos[j] + result_size + result_ref_width_sep,V_pos, item,result_size,1,1,1,a)
          else   
             result_font:write(H_pos[j],V_pos, item,result_size,1,1,1,a)
