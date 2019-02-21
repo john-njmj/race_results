@@ -96,6 +96,7 @@ local function update_parameter(par_name,par_val)
    elseif par_name == "result_font" then    
       if CONTENTS[par_val] then
          result_font = resource.load_font(par_val)
+         set_result_param(result_size,result_ref_width_sep)
       else 
          print ("result_font not found : ",par_val)
       end 
