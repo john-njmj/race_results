@@ -134,7 +134,8 @@
                  ["JD.csv", "JD.csv"],
                  ["JH.csv" ,"JH.csv"],
                  ["SD.csv" ,"SD.csv"],
-                 ["SH.csv" ,"SH.csv"]
+                 ["SH.csv" ,"SH.csv"],
+                 ["PR.csv" ,"PR.csv"],
             ],
             "default":"Menimen_jongens.csv"
             }]
