@@ -1,5 +1,6 @@
 {
     "name": "Race Results Screen",
     "author": "John De Schamphelaere",
+    "platforms": ["pi/epoch-2"],
     "desc": "Display Speed skating Race results"
 }
